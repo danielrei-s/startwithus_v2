@@ -5,6 +5,11 @@ session_start();
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
+if( empty( $_SESSION['login'] )){
+  $var = "LOGIN";
+}else{
+  $var = "Get Started!";
+}
 ?>
 
 <!DOCTYPE html>
@@ -61,7 +66,7 @@ ini_set('default_charset', 'ISO8859-1');
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="login.php" class="get-started-btn scrollto">Get Started</a>
+      <a href="login.php" class="get-started-btn scrollto"><?php echo $var?></a>
 
     </div>
   </header><!-- End Header -->
@@ -82,13 +87,13 @@ ini_set('default_charset', 'ISO8859-1');
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-store-line"></i>
-            <h3><a href="">Our Projects</a></h3>
+            <h3><a href="#portfolio">Our Projects</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Project Summary</a></h3>
+            <h3><a href="listar.php">Project Summary</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
@@ -178,7 +183,7 @@ ini_set('default_charset', 'ISO8859-1');
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
               <h4>Project information</h4>
-              <p>Only is possible to access both public and private information regarding the project</p>
+              <p>Only here is possible to access both public and private information regarding the project</p>
             </div>
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-cube-alt"></i>
@@ -235,11 +240,11 @@ ini_set('default_charset', 'ISO8859-1');
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 " data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
               <h4><a href="">Fund Rasing</a></h4>
-              <p>Organized fund rasing to seed your project</p>
+              <p>Organized fund rasing to seed your project and gather the best professinoals in the industry</p>
             </div>
           </div>
 
@@ -271,7 +276,7 @@ ini_set('default_charset', 'ISO8859-1');
         <div class="text-center">
           <h3>Host your project with us!</h3>
           <p> Register your project with us and start today looking for investors to kick start your business.</p>
-          <a class="cta-btn" href="#">Register</a>
+          <a class="cta-btn" href="#">Register now!</a>
         </div>
 
       </div>

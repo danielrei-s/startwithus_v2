@@ -23,13 +23,22 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   font-family: "Raleway", sans-serif;
   color: rgb(66, 66, 66);
 }
 
+h5 {
+  font-family: "Raleway", sans-serif;
+  color: rgb(235, 229, 229);
+  font-weight: bold;
+}
+
 th, tr, td{
-  color: whitesmoke;
+  color: whitesmoke; /* added */
+  text-align: center; /* added */
+  vertical-align: middle; 
+  
 }
 
 /*--------------------------------------------------------------

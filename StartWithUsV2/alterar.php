@@ -72,13 +72,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <h1 class="logo me-auto me-lg-0"><a href="index2.php">StartWith<span>Us</span></a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="index2.php">HOME</a></li>
-          <li><a class="nav-link scrollto active" href="listar.php">Listar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="create.php">Inserir Utilizadores</a></li>
-          <li><a class="nav-link scrollto " href="alterar.php">Alterar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="apagar.php">Apagar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="perfil.php">Perfil</a></li>
+      <ul>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

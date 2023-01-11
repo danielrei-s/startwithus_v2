@@ -13,7 +13,7 @@ include ("connect.php");
 // inicializa��o de vari�veis
 $nomeErr = $emailErr = $passwordErr= "";
 $nome = $email = $password = $hidden = $disabled = "";
-$query = "SELECT * FROM contatos";
+$query = "SELECT * FROM projects";
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -55,15 +55,15 @@ $result = mysqli_query($conn, $query);
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a href="index2.php">StartWith<span>Us</span></a></h1>
+      <h1 class="logo me-auto me-lg-0"><a href="index.php">StartWith<span>Us</span></a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto" href="index2.php">HOME</a></li>
-          <li><a class="nav-link scrollto active" href="listar.php">Listar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="create.php">Inserir Utilizadores</a></li>
-          <li><a class="nav-link scrollto " href="alterar.php">Alterar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="apagar.php">Apagar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="perfil.php">Perfil</a></li>
+      <ul>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -80,13 +80,13 @@ $result = mysqli_query($conn, $query);
         <div class="container" data-aos="fade-up">
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <main>
-            <h1><strong>Listar Utilizadores</strong></h1>
+            <h1><strong>LISTA DE PROJETOS</strong></h1>
             <div class="d-flex justify-content-center">
             <div class="col-xl-8 col-lg-8">
             <div class="icon-box">
             <section id="main-content">
       <section class="wrapper">
-        <h2><i class="fa fa-angle-right"></i>Utilizadores</h2>
+        <h2><i class="fa fa-angle-right"></i>Projetos</h2>
         <div class="row mb">
           <!-- page start-->
           <div class="content-panel">
@@ -94,15 +94,23 @@ $result = mysqli_query($conn, $query);
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
               <table class="display table table-bordered mb-0" id="hidden-table-info">                <thead>
                 <tbody>
-                <th><h3>Nome</h3></th>
-                <th><h3>E-mail</h3></th>
-                <th><h3>Codigo</h3></th>
+                <th><h5>Nome</h5></th>
+                <th><h5>Descric&atilde;o</h5></th>
+                <th><h5>Avaliac&atilde;o</h5></th>
+                <th><h5>Preco p/ ac&atilde;o</h5></th>
+                <th><h5>Investidores</h5></th>
+                <th><h5>Business Angel</h5></th>
+                <th><h5>Details</h5></th>
                 <?php while($registo = mysqli_fetch_array($result)){ ?>
                 <?php for($x= 0; $x < mysqli_num_rows($result); $x++){?>
                 <tr>
-                    <td><?php echo $registo["nome"];  ?></td>
-                    <td><?php echo $registo["email"];     ?></td>
-                    <td><?php echo $registo["codigo"]; ?></td>
+                    <td><?php echo $registo["name"];  ?></td>
+                    <td><?php echo $registo["description"];     ?></td>
+                    <td><?php echo $registo["valuation"]; ?></td>
+                    <td><?php echo $registo["price"]; ?></td>
+                    <td><?php if ($registo["investors"] = 1) { echo "Yes";} else { echo "No";} ?></td>
+                    <td><?php if ($registo["bangel"] = 1) { echo "Yes";} else { echo "No";} ?></td>
+                    <td><a class="nav-link scrollto active" href="portfolio-details.php">Learn more</a></td>
                         <?php break; } ?>
                 </tr>
                         <?php } ?>
@@ -154,7 +162,7 @@ $result = mysqli_query($conn, $query);
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Links Uteis</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index2.php">HOME</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">HOME</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="perfil.php">Utilizadores</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
             </ul>

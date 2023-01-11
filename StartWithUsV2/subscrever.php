@@ -5,63 +5,18 @@ session_start();
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
-// inicializa��o de vari�veis
-$passwordErr = $emailErr = $autErr = "";
-$password = $email = "";
+if( $_SESSION['login'] == TRUE){
 
 // estabelecer a liga��o � base de dados
 include ("connect.php");
 
-// verifica se foi inserido c�digo
-function test_input($dados) {
-	$dados = trim($dados);
-	$dados = stripslashes($dados);
-	$dados = htmlspecialchars($dados);
-	return $dados;
-  }
-
-if( !empty( $_SESSION['login'] )){
-    header ('Location: subscrever.php');
-} else {
-
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    if (empty($_POST["email"])) {
-      $emailErr = "PF digite o Email!";
-    } else {
-      $email = test_input($_POST["email"]);
-      // verifica o formato do email
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "O formato do Email � inv�lido.";
-      }
-    }
-
-    if (empty($_POST["password"])) {
-      $nomeErr = "PF digite a password!";
-    } else {
-      $nome = test_input($_POST["password"]);
-    }
-    
-    if ($passwordErr =="" AND $emailErr == ""){
-      $query = "SELECT * FROM contatos WHERE email='$_POST[email]' AND  password='$_POST[password]'";
-      $result = mysqli_query ($conn,$query);
-      $row = mysqli_fetch_assoc ($result);
-      if (mysqli_num_rows($result) > 0){
-        $_SESSION['nome'] = $row['nome'];
-        $_SESSION['codigo'] = $row['codigo'];
-        $_SESSION['login'] = TRUE;
-        header ('Location: index.php');
-      } else {
-        $autErr ="PF verifique os dados de autentica��o";
-      }
-  
-    }
-  }
-}
-
+// inicializa��o de vari�veis
+$nomeErr = $emailErr = $passwordErr= "";
+$nome = $email = $password = $hidden = $disabled = "";
+$query = "SELECT * FROM contatos";
+$result = mysqli_query($conn, $query);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,6 +39,7 @@ if( !empty( $_SESSION['login'] )){
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -98,66 +54,79 @@ if( !empty( $_SESSION['login'] )){
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
+
       <h1 class="logo me-auto me-lg-0"><a href="index.php">StartWith<span>Us</span></a></h1>
-      <nav id="navbar" class="navbar order-last order-lg-0">  
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="index2.php">HOME</a></li>
+          <li><a class="nav-link scrollto active" href="listar.php">Listar Utilizadores</a></li>
+          <li><a class="nav-link scrollto" href="create.php">Inserir Utilizadores</a></li>
+          <li><a class="nav-link scrollto " href="alterar.php">Alterar Utilizadores</a></li>
+          <li><a class="nav-link scrollto" href="apagar.php">Apagar Utilizadores</a></li>
+          <li><a class="nav-link scrollto" href="perfil.php">Perfil</a></li>
+        </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="login.php" class="get-started-btn scrollto">LOGIN</a>
+
+      <a href="close_session.php" class="get-started-btn scrollto">Terminar Sess&atilde;o</a>
 
     </div>
   </header><!-- End Header -->
 
+  
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
-    <div class="container" data-aos="fade-up">
-
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Autentifique-se para aceder<span>!</span></h1>
-          <h2>Listagens, utilizadores e comentarios, a distancia de um clique.</h2>
-        </div>
-      </div>
-
-      
-      <!-- LOGIN -->
-      <?php
-        if($_SERVER["REQUEST_METHOD"] == "POST" AND ($passwordErr !="" OR $emailErr != "" OR $autErr !="")) {
-      ?>
-      <div>
-        <h4>Alerta!</h4>
-        <hr>
-        <?php
-          echo $autErr;
-          echo $emailErr;
-          echo $passwordErr;
-        ?>
-      </div>
-      <?php } ?><!-- /.info -->
-
-      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-3 col-md-3">
-          <div class="icon-box">
-            <i class="ri-login-circle-fill"></i>
-            <br>
-            <br>
-            <form name="frmLogin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">          
-              <input type="email" name="email"  placeholder="Email" value="<?php echo $email; ?>" required autofocus>
-              <input type="password" name="password" placeholder="Password" required>
-              <div>
-              <label>
-                  <input type="checkbox" value="remember-me" class="text-white"> Memorizar
-              </label>
-              </div>
-              <button type="submit">Entrar</button>
-            </form>
+        <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <main>
+            <h1><strong>SUBSCREVER OS NOSSOS SERVICOS</strong></h1>
+            <div class="d-flex justify-content-center">
+            <div class="col-xl-8 col-lg-8">
+            <div class="icon-box">
+            <section id="main-content">
+      <section class="wrapper">
+        <h2><i class="fa fa-angle-right"></i>Utilizadores</h2>
+        <div class="row mb">
+          <!-- page start-->
+          <div class="content-panel">
+            <div class="adv-table">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+              <table class="display table table-bordered mb-0" id="hidden-table-info">                <thead>
+                <tbody>
+                <th><h3>Nome</h3></th>
+                <th><h3>E-mail</h3></th>
+                <th><h3>Codigo</h3></th>
+                <?php while($registo = mysqli_fetch_array($result)){ ?>
+                <?php for($x= 0; $x < mysqli_num_rows($result); $x++){?>
+                <tr>
+                    <td><?php echo $registo["nome"];  ?></td>
+                    <td><?php echo $registo["email"];     ?></td>
+                    <td><?php echo $registo["codigo"]; ?></td>
+                        <?php break; } ?>
+                </tr>
+                        <?php } ?>
+                </thead>
+                </tbody>
+              </table>
+            </div>
           </div>
+          <!-- page end-->
         </div>
-    </div>
-  </section><!-- End Hero -->
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+                </div>
+                </div>
+            </div>
+        </div><!-- /.container -->
+        </div>
+    </section><!-- End Hero -->
 
- 
 
-  <!-- ======= Footer ======= -->
+
+<!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -183,13 +152,11 @@ if( !empty( $_SESSION['login'] )){
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Links Uteis</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">HOME</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">ABOUT US</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICES</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">TERMS OF SERVICE</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">PRIVACY POLICY</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index2.php">HOME</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="perfil.php">Utilizadores</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
             </ul>
           </div>
         </div>
@@ -233,9 +200,13 @@ if( !empty( $_SESSION['login'] )){
 
 
   <script src="assets/js/main.js"></script>
-
   </body>
 </html>
 <?php
-  mysqli_close($conn);
+// fechar a liga��o � base de dados
+mysqli_close ($conn);
+
+} else {
+  header ('Location: login.php');
+} 
 ?>
