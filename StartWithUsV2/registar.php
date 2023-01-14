@@ -53,11 +53,11 @@ if(isset($_POST["register"])){
             $mail->SMTPSecure = "tls"; // sets the prefix to the servier
             $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
             $mail->Port = 587; // set the SMTP port for the GMAIL server
-            $mail->Username = "termowiki@gmail.com"; // GMAIL username
-            $mail->Password = "36s!!ekZ"; // GMAIL password
+            $mail->Username = "TBD"; // GMAIL username
+            $mail->Password = "TBD"; // GMAIL password
             $mail->IsHTML(true);
             $mail->AddAddress($_POST["email"], $_POST["username"]);
-            $mail->SetFrom("info@termowiki.pt", "TermoWiki");
+            $mail->SetFrom("TBD", "STARTWITHUS");
             $mail->Subject = "Por favor valide o seu email";
             $mail->Body = '
             <p>Bem-Vindo</p>
