@@ -114,7 +114,7 @@ if( !empty( $_SESSION['login'] )){
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
           <h1>Login<span>!</span></h1>
-          <h2>Login to begin your journey with us.</h2>
+          <h2>Login to start your journey with us.</h2>
         </div>
       </div>
 
