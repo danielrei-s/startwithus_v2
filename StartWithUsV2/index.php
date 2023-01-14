@@ -6,7 +6,7 @@ session_start();
 ini_set('default_charset', 'ISO8859-1');
 
 if( empty( $_SESSION['login'] )){
-  $var = "LOGIN";
+  $var = "LOGIN / REGISTER";
 }else{
   $var = "Get Started!";
 }
@@ -66,7 +66,7 @@ if( empty( $_SESSION['login'] )){
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="login.php" class="get-started-btn scrollto"><?php echo $var?></a>
+      <a href="login.php" class="get-started-btn scrollto"><?php echo $var;?></a>
 
     </div>
   </header><!-- End Header -->
