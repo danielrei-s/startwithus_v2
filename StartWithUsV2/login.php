@@ -102,7 +102,7 @@ if( !empty( $_SESSION['login'] )){
       <nav id="navbar" class="navbar order-last order-lg-0">  
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="login.php" class="get-started-btn scrollto">LOGIN</a>
+      <a href="registar.php" class="get-started-btn scrollto">REGISTER</a>
 
     </div>
   </header><!-- End Header -->
@@ -113,8 +113,8 @@ if( !empty( $_SESSION['login'] )){
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
-          <h1>Autentifique-se para aceder<span>!</span></h1>
-          <h2>Listagens, utilizadores e comentarios, a distancia de um clique.</h2>
+          <h1>Login<span>!</span></h1>
+          <h2>Login to begin your journey with us.</h2>
         </div>
       </div>
 
@@ -135,24 +135,17 @@ if( !empty( $_SESSION['login'] )){
       <?php } ?><!-- /.info -->
 
       <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-3 col-md-3">
-          <div class="icon-box">
-            <i class="ri-login-circle-fill"></i>
+            <div class="row">
             <br>
-            <br>
-            <form name="frmLogin" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">          
-              <input type="email" name="email"  placeholder="Email" value="<?php echo $email; ?>" required autofocus>
-              <input type="password" name="password" placeholder="Password" required>
-              <div>
-              <label>
-                  <input type="checkbox" value="remember-me" class="text-white"> Memorizar
-              </label>
-              </div>
-              <button type="submit">Entrar</button>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+            <form class="form-group" method="post" action="login.php">
+              <input type="email" class="form-control" name="email"  placeholder="Email" value="<?php echo $email; ?>" required autofocus><br>
+              <input type="password" class="form-control" name="password" placeholder="Password" required><br>
+              <button type="submit" class="btn btn-warning">Login</button>
             </form>
           </div>
-        </div>
-    </div>
+          </div>
   </section><!-- End Hero -->
 
  
