@@ -142,10 +142,13 @@ if( !empty( $_SESSION['login'] )){
             <form class="form-group" method="post" action="login.php">
               <input type="email" class="form-control" name="email"  placeholder="Email" value="<?php echo $email; ?>" required autofocus><br>
               <input type="password" class="form-control" name="password" placeholder="Password" required><br>
-              <button type="submit" class="btn btn-warning">Login</button>
+              <div class="row">
+              <button type="submit" name="login" class="btn btn-warning">Login</button>
+              </div>
             </form>
           </div>
           </div>
+        </div>
   </section><!-- End Hero -->
 
  
