@@ -153,8 +153,8 @@ if(isset($_POST["register"])){
                   <div class="col-lg-6">
                     <label for="genre">Genre</label>         
                     <select name="genre" class="form-control" id="genre" required>
-                        <option value="M">Masculino</option>
-                        <option value="F">Feminino</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
                     </select>
                   </div>  
                   <div class="col-lg-6">
