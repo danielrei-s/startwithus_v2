@@ -39,8 +39,8 @@ CREATE TABLE `projetos` (
   `owner` int(11) NOT NULL,
   `name` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
   `description` varchar(255) CHARACTER SET latin1 NOT NULL,
-  `private` varchar(255) CHARACTER SET latin1 DEFAULT NULL
-  `price` float NOT NULL,
+  `private` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
