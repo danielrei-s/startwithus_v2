@@ -58,17 +58,17 @@ $result = mysqli_query($conn, $query);
       <h1 class="logo me-auto me-lg-0"><a href="index.php">StartWith<span>Us</span></a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
       <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto " href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
           <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="close_session.php" class="get-started-btn scrollto">Terminar Sess&atilde;o</a>
+      <a href="close_session.php" class="get-started-btn scrollto">Logout</a>
 
     </div>
   </header><!-- End Header -->
@@ -80,26 +80,27 @@ $result = mysqli_query($conn, $query);
         <div class="container" data-aos="fade-up">
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <main>
-            <h1><strong>LISTA DE PROJETOS</strong></h1>
+          <br>
+          <br>
+            <h1><strong>PROJECT LIST</strong></h1>
             <div class="d-flex justify-content-center">
-            <div class="col-xl-11 col-lg-11">
+            <div class="col-xl-11 col-xl-11">
             <div class="icon-box">
             <section id="main-content">
       <section class="wrapper">
-        <h2><i class="fa fa-angle-right"></i>Projetos</h2>
         <div class="row mb">
           <!-- page start-->
           <div class="content-panel">
             <div class="adv-table">
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <div class="table-wrapper-scroll-y my-custom-scrollbar" style="height:500px; overflow-y: auto;">
               <table class="awsome-table" id="hidden-table-info">                
                 <thead>
                 <tbody>
-                <th><h5>Nome</h5></th>
-                <th><h5>Descric&atilde;o</h5></th>
-                <th><h5>Avaliac&atilde;o</h5></th>
-                <th><h5>Preco p/ ac&atilde;o</h5></th>
-                <th><h5>Investidores</h5></th>
+                <th><h5>Name</h5></th>
+                <th><h5>Description</h5></th>
+                <th><h5>Evaluation</h5></th>
+                <th><h5>Price per stock</h5></th>
+                <th><h5>Investors</h5></th>
                 <th><h5>Business Angel</h5></th>
                 <th><h5>Details</h5></th>
                 <?php while($registo = mysqli_fetch_array($result)){ ?>
@@ -122,16 +123,15 @@ $result = mysqli_query($conn, $query);
           </div>
           <!-- page end-->
         </div>
+      </div>
+    </div>
+      </div>
+      </div>
+      </div>
+      </div>
         <!-- /row -->
-      </section>
-      <!-- /wrapper -->
-    </section>
-                </div>
-                </div>
-            </div>
-        </div><!-- /.container -->
-        </div>
-    </section><!-- End Hero -->
+        </section>
+        <!-- /wrapper -->
 
 
 
@@ -151,26 +151,35 @@ $result = mysqli_query($conn, $query);
                 <strong>Email:</strong> admin@admin.pt<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="ri-twitter-fill"></i></a>
-                <a href="#" class="facebook"><i class="ri-facebook-circle-fill"></i></a>
-                <a href="#" class="instagram"><i class="ri-instagram-fill"></i></a>
-                <a href="#" class="google-plus"><i class="ri-skype-fill"></i></a>
-                <a href="#" class="linkedin"><i class="ri-linkedin-fill"></i></a>
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Links Uteis</h4>
+            <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php">HOME</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="perfil.php">Utilizadores</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Research projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Invest in projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Host your project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Become a member of our team</a></li>
+            </ul>
+          </div>
 
     <div class="container">
       <div class="copyright">

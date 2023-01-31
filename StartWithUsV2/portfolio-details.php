@@ -52,10 +52,10 @@ ini_set('default_charset', 'ISO8859-1');
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
           <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>
@@ -131,23 +131,25 @@ ini_set('default_charset', 'ISO8859-1');
                  also adding a stylish touch to your kitchen counter or office desk.
                   Say goodbye to messy tea bags and enjoy a perfect cup of tea
                    with the Honeycomb Tea Holder! </p>  
-            </div>
-            <h2>Liked this project? Get access!</h2>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 
-              <!-- Identify your business so that you can collect the payments. -->
-              <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
-              <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick">
-              <!-- Specify details about the item that buyers will purchase. --> 
-              <input type="hidden" name="item_name" value="Premium Umbrella"> 
-              <input type="hidden" name="amount" value="50.00"> 
-              <input type="hidden" name="currency_code" value="USD"> <!-- Provide a drop-down menu option field. --> 
-              <input type="hidden" name="on0" value="Type">Type of umbrella <br /> <select name="os0"> 
-                <option value="Select Type">-- Select Type --</option> <option value="Standard">Investor</option>
-                <option value="Collapsable">Expert</option> </select> <br /> <!-- Display the payment button. --> 
-                <br>
-                <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> 
-                <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" > 
-              </form>
+                   <h2>Liked this project? Become an Investor!</h2>
+                   <div class="d-flex justify-content-center">
+                   <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 
+                     <!-- Identify your business so that you can collect the payments. -->
+                     <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
+                     <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick">
+                     <!-- Specify details about the item that buyers will purchase. --> 
+                     <input type="hidden" name="item_name" value="Premium Umbrella"> 
+                     <input type="hidden" name="amount" value="50.00"> 
+                     <input type="hidden" name="currency_code" value="USD"> <!-- Provide a drop-down menu option field. --> 
+                     <input type="hidden" name="on0" value="Type">Type of umbrella <br /> <select name="os0"> 
+                       <option value="Select Type">-- Select Type --</option> <option value="Standard">Investor</option>
+                       <option value="Collapsable">Expert</option> </select> <br /> <!-- Display the payment button. --> 
+                       <br>
+                       <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> 
+                       <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" > 
+                      </form>
+                   </div>
+              </div>
             </div>
             </div>
           </div>
