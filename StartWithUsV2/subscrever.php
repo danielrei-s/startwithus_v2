@@ -58,12 +58,12 @@ $result = mysqli_query($conn, $query);
       <h1 class="logo me-auto me-lg-0"><a href="index.php">StartWith<span>Us</span></a></h1>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="index2.php">HOME</a></li>
-          <li><a class="nav-link scrollto active" href="listar.php">Listar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="create.php">Inserir Utilizadores</a></li>
-          <li><a class="nav-link scrollto " href="alterar.php">Alterar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="apagar.php">Apagar Utilizadores</a></li>
-          <li><a class="nav-link scrollto" href="perfil.php">Perfil</a></li>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
+          <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -78,51 +78,45 @@ $result = mysqli_query($conn, $query);
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center">
         <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <main>
-            <h1><strong>SUBSCREVER OS NOSSOS SERVICOS</strong></h1>
-            <div class="d-flex justify-content-center">
-            <div class="col-xl-8 col-lg-8">
-            <div class="icon-box">
-            <section id="main-content">
-      <section class="wrapper">
-        <h2><i class="fa fa-angle-right"></i>Utilizadores</h2>
-        <div class="row mb">
-          <!-- page start-->
-          <div class="content-panel">
-            <div class="adv-table">
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-              <table class="display table table-bordered mb-0" id="hidden-table-info">                <thead>
-                <tbody>
-                <th><h3>Nome</h3></th>
-                <th><h3>E-mail</h3></th>
-                <th><h3>Codigo</h3></th>
-                <?php while($registo = mysqli_fetch_array($result)){ ?>
-                <?php for($x= 0; $x < mysqli_num_rows($result); $x++){?>
-                <tr>
-                    <td><?php echo $registo["nome"];  ?></td>
-                    <td><?php echo $registo["email"];     ?></td>
-                    <td><?php echo $registo["codigo"]; ?></td>
-                        <?php break; } ?>
-                </tr>
-                        <?php } ?>
-                </thead>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <!-- page end-->
-        </div>
-        <!-- /row -->
-      </section>
-      <!-- /wrapper -->
-    </section>
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <main>
+                <h1><strong>SUBSCREVER OS NOSSOS SERVICOS</strong></h1>
+                <div class="d-flex justify-content-center">
+                <div class="col-xl-6 col-lg-6">
+                <div class="icon-box">
+                <section id="main-content">
+          <section class="wrapper">
+                    <div class="container">
+                      <form>
+                        <div class="form-group">
+                          <label for="projectName">Name of the Project</label>
+                          <input type="text" class="form-control" id="projectName" placeholder="Enter Name of the Project">
+                        </div>
+                        <div class="form-group">
+                          <label for="projectDescription">Description</label>
+                          <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="projectPrice">Price</label>
+                          <input type="text" class="form-control" id="projectPrice" placeholder="Enter Price">
+                        </div>
+                        <div class="form-group">
+                          <label for="projectValuation">Valuation</label>
+                          <input type="text" class="form-control" id="projectValuation" placeholder="Enter Valuation">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                    </div>
+                    <!-- /row -->
+            </section>
+                    <!-- /wrapper -->
                 </div>
                 </div>
-            </div>
-        </div><!-- /.container -->
+                </div>
+          </div><!-- /.container -->
         </div>
-    </section><!-- End Hero -->
+  </section>
+<!-- End Hero -->
 
 
 
@@ -132,7 +126,7 @@ $result = mysqli_query($conn, $query);
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-6 col-md-6">
             <div class="footer-info">
               <h3>StartWith<span>Us</span></h3>
               <p>

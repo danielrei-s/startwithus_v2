@@ -228,7 +228,7 @@ if( empty( $_SESSION['login'] )){
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Full transparency</a></h4>
-              <p>Share your project public details with everyone and keep the important information for investors only</p>
+              <p>Share your project public details.php everyone and keep the important information for investors only</p>
             </div>
           </div>
 
@@ -301,7 +301,7 @@ if( empty( $_SESSION['login'] )){
                 <p>Reusable bottle</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -315,7 +315,7 @@ if( empty( $_SESSION['login'] )){
                 <p>HoneyCon</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -329,7 +329,7 @@ if( empty( $_SESSION['login'] )){
                 <p>App</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ if( empty( $_SESSION['login'] )){
                 <p>Card</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -357,7 +357,7 @@ if( empty( $_SESSION['login'] )){
                 <p>Web</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -371,7 +371,7 @@ if( empty( $_SESSION['login'] )){
                 <p>App</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -385,7 +385,7 @@ if( empty( $_SESSION['login'] )){
                 <p>Card</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -399,7 +399,7 @@ if( empty( $_SESSION['login'] )){
                 <p>Card</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -413,7 +413,7 @@ if( empty( $_SESSION['login'] )){
                 <p>Web</p>
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.php" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
@@ -569,15 +569,15 @@ if( empty( $_SESSION['login'] )){
               <div class="member-img">
                 <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
                 <h4>Joaquim Ferreira</h4>
-                <span>Team Leader for Software Development</span>
+                <span>Web Designer</span>
               </div>
             </div>
           </div>
@@ -585,17 +585,17 @@ if( empty( $_SESSION['login'] )){
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+                <h4>Justyna Jaczewsk</h4>
+                <span>Marketing Manager</span>
               </div>
             </div>
           </div>
@@ -603,17 +603,17 @@ if( empty( $_SESSION['login'] )){
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
                 <h4>Pedro Briga</h4>
-                <span>Software Developer</span>
+                <span>Web Developer</span>
               </div>
             </div>
           </div>
@@ -623,15 +623,87 @@ if( empty( $_SESSION['login'] )){
               <div class="member-img">
                 <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
+                <h4>Violette Coudret</h4>
+                <span>Salesperson</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Fabio Reis</h4>
+                <span>Systems Administrator</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <div class="social">
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Joana Moura</h4>
+                <span>Treasurer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="">
+                <div class="social">
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Margarida Paiva</h4>
+                <span>Accounting Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <div class="social">
+                <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+                  <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Daniel Reis</h4>
+                <span>Web Manager</span>
               </div>
             </div>
           </div>
@@ -759,8 +831,7 @@ if( empty( $_SESSION['login'] )){
               <li><i class="bx bx-chevron-right"></i> <a href="#">Research projects</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Invest in projects</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Host your project</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">....</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">.....</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Become a member of our team</a></li>
             </ul>
           </div>
 

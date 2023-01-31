@@ -34,12 +34,49 @@ h5 {
   font-weight: bold;
 }
 
-th, tr, td{
+/* /* th, tr, td{
   color: whitesmoke; /* added */
-  text-align: center; /* added */
-  vertical-align: middle; 
+  /* text-align: center; added */
+  /* vertical-align: middle;  */
   
-}
+/* } 
+*/  
+
+.awesome-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  th,
+  td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #252525;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 2px solid #ddd;
+  }
+
+  td {
+    color: rgb(255, 255, 255);
+  }
+
+  tr:nth-child(even) {
+    background-color: #535353;
+  }
+
+  tr:hover {
+    background-color: #96956c;
+    cursor: pointer;
+  }
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -98,6 +135,58 @@ th, tr, td{
     border-bottom:1px dashed #efefef;
     margin-bottom:25px;
 }
+
+/*--------------------------------------------------
+# Estilo de form para subscrever produtos
+----------------------------------------------------*/
+
+.form-group {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 25px;
+  color: #fff;
+}
+.form-control {
+  border-radius: 25px;
+  background-color: #444;
+  color: #fff;
+  font-size: 14px;
+}
+label {
+  font-size: 14px;
+}
+.btn-primary {
+  border-radius: 25px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# paypal
+--------------------------------------------------------------*/
+
+#paymentPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  box-shadow: 0px 0px 10px #999;
+  z-index: 999;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+body.popup-open {
+  overflow: hidden;
+  filter: blur(5px);
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/

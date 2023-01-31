@@ -82,7 +82,7 @@ $result = mysqli_query($conn, $query);
         <main>
             <h1><strong>LISTA DE PROJETOS</strong></h1>
             <div class="d-flex justify-content-center">
-            <div class="col-xl-8 col-lg-8">
+            <div class="col-xl-11 col-lg-11">
             <div class="icon-box">
             <section id="main-content">
       <section class="wrapper">
@@ -92,7 +92,8 @@ $result = mysqli_query($conn, $query);
           <div class="content-panel">
             <div class="adv-table">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
-              <table class="display table table-bordered mb-0" id="hidden-table-info">                <thead>
+              <table class="awsome-table" id="hidden-table-info">                
+                <thead>
                 <tbody>
                 <th><h5>Nome</h5></th>
                 <th><h5>Descric&atilde;o</h5></th>

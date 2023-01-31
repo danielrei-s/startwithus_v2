@@ -284,4 +284,21 @@
     });
   });
 
+  // payment animation
+  var paymentButton = document.getElementById("paymentButton");
+  var paymentPopup = document.getElementById("paymentPopup");
+  
+  paymentButton.addEventListener("click", function() {
+    paymentPopup.style.display = "block";
+    document.body.classList.add("popup-open");
+  });
+  
+  var cancelButton = document.getElementById("cancelButton");
+  cancelButton.addEventListener("click", function() {
+    paymentPopup.style.display = "none";
+    document.body.classList.remove("popup-open");
+  });
+
+  
+
 })()

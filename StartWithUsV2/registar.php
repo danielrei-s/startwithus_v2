@@ -132,7 +132,7 @@ if(isset($_POST["register"])){
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
           <h1>Register<span>!</span></h1>
-          <h2>Your journey with us starts here, with your registration.</h2>
+          <h2>Your journey with us starts <span>now</span>, register here.</h2>
         </div>
       </div>
 
