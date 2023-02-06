@@ -3,62 +3,45 @@
 session_start();
 
 // codifica��o de carateres
-ini_set('default_charset', 'ISO8859-1');
+ini_set('default_charset', 'utf-8');
 
 // inicializa��o de vari�veis
-$passwordErr = $emailErr = $autErr = "";
+$passwordErr = $emailErr = $autErr = $msgErr = "";
 $password = $email = "";
 
 // estabelecer a liga��o � base de dados
 include ("connect.php");
 
-// verifica se foi inserido c�digo
-function test_input($dados) {
-	$dados = trim($dados);
-	$dados = stripslashes($dados);
-	$dados = htmlspecialchars($dados);
-	return $dados;
-  }
-
-if( !empty( $_SESSION['login'] )){
-    header ('Location: subscrever.php');
-} else {
-
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    if (empty($_POST["email"])) {
-      $emailErr = "PF digite o Email!";
-    } else {
-      $email = test_input($_POST["email"]);
-      // verifica o formato do email
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "O formato do Email � inv�lido.";
-      }
-    }
-
-    if (empty($_POST["password"])) {
-      $nomeErr = "PF digite a password!";
-    } else {
-      $nome = test_input($_POST["password"]);
-    }
-    
-    if ($passwordErr =="" AND $emailErr == ""){
-      $query = "SELECT * FROM contatos WHERE email='$_POST[email]' AND  password='$_POST[password]'";
-      $result = mysqli_query ($conn,$query);
-      $row = mysqli_fetch_assoc ($result);
+if(!empty($_SESSION["id"])){
+  header("Location: subscrever.php");
+}
+if(isset($_POST["login"])){
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $result = mysqli_query($conn,"SELECT * FROM users WHERE email = '$email'");
+  $row = mysqli_fetch_assoc($result);
       if (mysqli_num_rows($result) > 0){
-        $_SESSION['nome'] = $row['nome'];
-        $_SESSION['codigo'] = $row['codigo'];
-        $_SESSION['login'] = TRUE;
-        header ('Location: index.php');
+        if(($row["emailValidation"]) == 0){
+          $msgErr = "Ainda não validou o seu email!";
+        }
+        elseif(($row["status"]) == 0){
+          $msgErr = "O seu utilizador foi suspenso, contacte o moderador!";
+        }
+        elseif($password == $row["password"]){
+          $_SESSION["id"] = $row["idUser"];
+          $_SESSION['login'] = TRUE;
+          if (($row["idType"]) == 3){
+              header("Location: subscrever.php");
+          }
+          elseif(($row["idType"]) == 1){
+              header("Location: index.php");
+          }
       } else {
-        $autErr ="PF verifique os dados de autentica��o";
+        $autErr ="PF verifique os dados de autenticação";
       }
   
+      }
     }
-  }
-}
-
 
 ?>
 
@@ -121,15 +104,16 @@ if( !empty( $_SESSION['login'] )){
       
       <!-- LOGIN -->
       <?php
-        if($_SERVER["REQUEST_METHOD"] == "POST" AND ($passwordErr !="" OR $emailErr != "" OR $autErr !="")) {
+        if($_SERVER["REQUEST_METHOD"] == "POST" AND ($passwordErr !="" OR $emailErr != "" OR $autErr !="" OR $msgErr !="")) {
       ?>
-      <div>
-        <h4>Alerta!</h4>
-        <hr>
+      <br>
+      <div class="alert alert-danger">
+        <h4 style="color:#842029;">Alerta!</h4>
         <?php
           echo $autErr;
           echo $emailErr;
           echo $passwordErr;
+          echo $msgErr;
         ?>
       </div>
       <?php } ?><!-- /.info -->
