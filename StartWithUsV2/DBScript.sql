@@ -1,7 +1,7 @@
 CREATE TABLE UserType (
 id INT NOT NULL AUTO_INCREMENT,
 type INT NOT NULL,
-description VARCHAR(100) NOT NULL,
+description VARCHAR(100) NOT NULL,https://github.com/danielrei-s/startwithus_v2/blob/master/StartWithUsV2/DBScript.sql
 PRIMARY KEY (id)
 );
 INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('1','0','Admin');
@@ -13,6 +13,21 @@ id INT NOT NULL AUTO_INCREMENT,
 idTipo INT NOT NULL,
 name VARCHAR(255) NOT NULL,
 nif VARCHAR(255) NOT NULL,
+PRIMARY KEY (id),
+FOREIGN KEY (idTipo) REFERENCES UserType(id)
+);
+CREATE TABLE utilizadores (
+id INT NOT NULL AUTO_INCREMENT,
+idTipo INT NOT NULL,
+username VARCHAR(255) NOT NULL,
+primeiroNome VARCHAR(255) NOT NULL,
+ultimoNome VARCHAR(255) NOT NULL,
+dataNascimento DATE NOT NULL,
+genero VARCHAR(1) NOT NULL,
+email VARCHAR(255) NOT NULL,
+token VARCHAR(10) NOT NULL,
+dataCriacao DATE NOT NULL,
+password VARCHAR(255) NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (idTipo) REFERENCES UserType(id)
 );
