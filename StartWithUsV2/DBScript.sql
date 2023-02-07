@@ -1,12 +1,4 @@
-CREATE TABLE UserType (
-id INT NOT NULL AUTO_INCREMENT,
-type INT NOT NULL,
-description VARCHAR(100) NOT NULL,
-PRIMARY KEY (id)
-);
-INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('1','0','Admin');
-INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('2','1','Owner');
-INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('3','1','User');
+--User - idType  ( 1 - Admin; 2 - User)
 
 CREATE TABLE Users (
 idUser INT NOT NULL AUTO_INCREMENT,
@@ -26,7 +18,7 @@ nif VARCHAR(255) NOT NULL,
 PRIMARY KEY (idUser),
 FOREIGN KEY (idType) REFERENCES UserType(id)
 );
-CREATE TABLE ProjectsFinal (
+CREATE TABLE Projects (
 idProject INT NOT NULL AUTO_INCREMENT,
 idOwner INT NOT NULL,
 initialDate DATE NOT NULL,
@@ -43,7 +35,7 @@ idProject INT NOT NULL,
 idUser INT NOT NULL,
 value DECIMAL(10,2) NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY (idProject) REFERENCES ProjectsFinal(idProject),
+FOREIGN KEY (idProject) REFERENCES Projects(idProject),
 FOREIGN KEY (idUser) REFERENCES Users(idUser)
 );
 CREATE TABLE Projects_FullReaders (
@@ -51,17 +43,19 @@ idProject INT NOT NULL,
 idUser INT NOT NULL,
 FinalDate DATE NOT NULL,
 PRIMARY KEY (idProject,idUser),
-FOREIGN KEY (idProject) REFERENCES ProjectsFinal(idProject),
+FOREIGN KEY (idProject) REFERENCES Projects(idProject),
 FOREIGN KEY (idUser) REFERENCES Users(idUser)
 );
 CREATE TABLE Experts (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
+idExpert INT NOT NULL,
 expertTitle VARCHAR(255) NOT NULL,
 smallDescription VARCHAR(255) NOT NULL,
 extendedDescription TEXT NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY (idProject) REFERENCES ProjectsFinal(idProject)
+FOREIGN KEY (idProject) REFERENCES Projects(idProject)
+FOREIGN KEY (idExpert) REFERENCES Users(idUser)
 );
 CREATE TABLE Messages (
 id INT NOT NULL AUTO_INCREMENT,
@@ -78,7 +72,7 @@ counterProposalPercentage DECIMAL(5,2) NOT NULL,
 Accept TINYINT(1) NOT NULL,
 PaymentConfirmed TINYINT(1) NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY (idProject) REFERENCES ProjectsFinal(idProject),
+FOREIGN KEY (idProject) REFERENCES Projects(idProject),
 FOREIGN KEY (idSender) REFERENCES Users(idUser),
 FOREIGN KEY (idReceiver) REFERENCES Users(idUser)
 );
