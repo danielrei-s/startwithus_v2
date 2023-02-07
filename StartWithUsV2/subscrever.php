@@ -77,8 +77,7 @@ function test_input($dados) {
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/companyLogo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -116,7 +115,7 @@ function test_input($dados) {
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="close_session.php" class="get-started-btn scrollto">Terminar Sess&atilde;o</a>
+      <a href="close_session.php" class="get-started-btn scrollto">LOGOUT</a>
 
     </div>
   </header><!-- End Header -->

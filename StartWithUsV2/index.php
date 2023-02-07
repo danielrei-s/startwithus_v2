@@ -1,16 +1,61 @@
 <?php
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 //inicializar sess�o
 session_start();
 
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
-if( empty( $_SESSION['login'] )){
+if( empty( $_SESSION['id'] )){
   $var = "LOGIN / REGISTER";
 }else{
   $var = "Get Started!";
 }
+
+if(isset($_POST["submit"])){
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $subject = $_POST["subject"];
+  $message = $_POST["message"];
+
+  $mail = new PHPMailer(true);
+  $mail->IsSMTP(); // telling the class to use SMTP
+  $mail->SMTPOptions = array(
+      'ssl' => array(
+          'verify_peer' => false,
+          'verify_peer_name' => false,
+          'allow_self_signed' => true
+      )
+  );
+  $mail->SMTPAuth = true; // enable SMTP authentication
+  $mail->SMTPSecure = "tls"; // sets the prefix to the servier
+  $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
+  $mail->Port = 587; // set the SMTP port for the GMAIL server
+  $mail->Username = "termowiki@gmail.com"; // GMAIL username
+  $mail->Password = "dhhruoocvtrujpbh"; // GMAIL password
+  $mail->IsHTML(true);
+  $mail->AddAddress($_POST["email"], $_POST["name"]);
+  $mail->SetFrom("info@startwithus.com", "StartWithUs");
+  $mail->Subject = ($_POST["subject"]);
+  $mail->Body = ($_POST["message"]);
+  try{
+      $mail->Send();
+      echo
+      "<script> alert('Verifique o seu email!'); </script>";
+  } catch(Exception $e){
+      //Something went bad
+      echo $mail->ErrorInfo;
+  } 
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +69,7 @@ if( empty( $_SESSION['login'] )){
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/SWU_LOGO_35.png" rel="icon">
-  <link href="assets/img/SWU_logo_180.png" rel="apple-touch-icon">
+  <link href="assets/img/companyLogo.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -754,10 +798,10 @@ if( empty( $_SESSION['login'] )){
             </div>
 
           </div>
-
+          
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="index.php" method="post" role="form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -772,12 +816,8 @@ if( empty( $_SESSION['login'] )){
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <br>
+              <div class="text-center"><button name="submit">Send Message</button></div>
             </form>
 
           </div>
@@ -834,16 +874,6 @@ if( empty( $_SESSION['login'] )){
               <li><i class="bx bx-chevron-right"></i> <a href="#contact">Become a member of our team</a></li>
             </ul>
           </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Stay up to date with your favorite projects, subscribe to our Newsletter</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
         </div>
       </div>
     </div>

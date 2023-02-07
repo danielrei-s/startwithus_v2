@@ -30,7 +30,7 @@ if(isset($_POST["login"])){
         elseif($password == $row["password"]){
           $_SESSION["id"] = $row["idUser"];
           $_SESSION['login'] = TRUE;
-          if (($row["idType"]) == 3){
+          if (($row["idType"]) == 2){
               header("Location: subscrever.php");
           }
           elseif(($row["idType"]) == 1){
