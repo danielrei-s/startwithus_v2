@@ -1,3 +1,13 @@
+CREATE TABLE UserType (
+id INT NOT NULL AUTO_INCREMENT,
+type INT NOT NULL,
+description VARCHAR(100) NOT NULL,
+PRIMARY KEY (id)
+);
+INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('1','0','Admin');
+INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('2','1','Owner');
+INSERT INTO `usertype`(`id`, `type`,`description`) VALUES ('3','1','User');
+
 CREATE TABLE Users (
 idUser INT NOT NULL AUTO_INCREMENT,
 idType INT(1) DEFAULT 1,
@@ -46,15 +56,17 @@ FOREIGN KEY (idUser) REFERENCES Users(idUser)
 CREATE TABLE Experts (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
+idExpert INT NOT NULL,
 expertTitle VARCHAR(255) NOT NULL,
 smallDescription VARCHAR(255) NOT NULL,
 extendedDescription TEXT NOT NULL,
 PRIMARY KEY (id),
-FOREIGN KEY (idProject) REFERENCES Projects(idProject)
+FOREIGN KEY (idProject) REFERENCES ProjectsFinal(idProject)
 );
 CREATE TABLE Messages (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
+idAction int Not NULL,
 idSender INT NOT NULL,
 idReceiver INT NOT NULL,
 sendDate DATE NOT NULL,
