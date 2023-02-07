@@ -66,6 +66,7 @@ FOREIGN KEY (idProject) REFERENCES ProjectsFinal(idProject)
 CREATE TABLE Messages (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
+idAction int Not NULL,
 idSender INT NOT NULL,
 idReceiver INT NOT NULL,
 sendDate DATE NOT NULL,
