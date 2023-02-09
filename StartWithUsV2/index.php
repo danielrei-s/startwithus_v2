@@ -6,9 +6,11 @@ session_start();
 ini_set('default_charset', 'ISO8859-1');
 
 if( empty( $_SESSION['id'] )){
-  $var = "LOGIN / REGISTER";
+  $var = "LOGIN / REGISTER";  //texto no botão
+  $var2 = "login";            // Caminho de a href
 }else{
-  $var = "Get Started!";
+  $var = "LOGOUT";            //texto no botão
+  $var2 = "close_session";    // Caminho de a href
 }
 ?>
 
@@ -66,7 +68,7 @@ if( empty( $_SESSION['id'] )){
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="login.php" class="get-started-btn scrollto"><?php echo $var;?></a>
+      <a href="<?= $var2;?>.php" class="get-started-btn scrollto"><?php echo $var;?></a>
 
     </div>
   </header><!-- End Header -->
@@ -79,7 +81,6 @@ if( empty( $_SESSION['id'] )){
         <div class="col-xl-6 col-lg-8">
           <h1>StartWith<span>Us</span></h1>
           <h2>Bridging the gap between investors and skyrocket startups</h2>
-          
         </div>
       </div>
 
@@ -98,20 +99,8 @@ if( empty( $_SESSION['id'] )){
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Business Angels</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Investors</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="">Became a member</a></h3>
+            <h3><a href="registar.php">Became a member</a></h3>
           </div>
         </div>
       </div>

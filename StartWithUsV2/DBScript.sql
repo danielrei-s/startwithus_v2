@@ -32,6 +32,7 @@ INSERT INTO `users` (`idType`, `firstName`, `lastName`, `birthdayDate`, `genre`,
 (2, 'Angel2', 'Angel2', '1977-06-12', 'M', 'angel2@startwithus.com', 'c4b0df2812', 1, '1111', '2023-02-07 11:40:06', NULL, 1, '25445884112');
 CREATE TABLE Projects (
 idProject INT NOT NULL AUTO_INCREMENT,
+projectName VARCHAR(255) NOT NULL,
 idOwner INT NOT NULL,
 initialDate DATE NOT NULL,
 summaryDescription VARCHAR(255) NOT NULL,
@@ -41,9 +42,9 @@ expertNeeds VARCHAR(255) NOT NULL,
 PRIMARY KEY (idProject),
 FOREIGN KEY (idOwner) REFERENCES Users(idUser)
 );
-INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('9','2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 1','Descrição extensiva do projeto Owner 1]','10000','N');
-INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('9','2023-02-07 11:40:06','Descrição Sumária do segundo Projeto Owner 1','Descrição extensiva do segundo projeto Owner 1','20000','N');
-INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('10','2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 2','Descrição extensiva do projeto do Owner 2','35000','N');
+INSERT INTO `projects`(`idOwner`, `projectName`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('9',  'Nome do Projecto 1',   '2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 1','Descrição extensiva do projeto Owner 1]','10000','N');
+INSERT INTO `projects`(`idOwner`, `projectName`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('9',  'Nome do Projecto 2',   '2023-02-07 11:40:06','Descrição Sumária do segundo Projeto Owner 1','Descrição extensiva do segundo projeto Owner 1','20000','N');
+INSERT INTO `projects`(`idOwner`, `projectName`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('10', 'Nome do Projecto 3',   '2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 2','Descrição extensiva do projeto do Owner 2','35000','N');
 CREATE TABLE Projects_Comparticipation (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
