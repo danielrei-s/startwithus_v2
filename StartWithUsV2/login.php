@@ -123,7 +123,7 @@ if(isset($_POST["login"])){
             <br>
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-            <form class="form-group" method="post" action="login.php">
+            <form class="form-group" method="post" action="login.php" style="background-color: transparent;">
               <input type="email" class="form-control" name="email"  placeholder="Email" value="<?php echo $email; ?>" required autofocus><br>
               <input type="password" class="form-control" name="password" placeholder="Password" required><br>
               <div class="row">

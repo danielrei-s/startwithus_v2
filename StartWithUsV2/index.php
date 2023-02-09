@@ -1,11 +1,4 @@
 <?php
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 //inicializar sess�o
 session_start();
 
@@ -17,43 +10,6 @@ if( empty( $_SESSION['id'] )){
 }else{
   $var = "Get Started!";
 }
-
-if(isset($_POST["submit"])){
-  $name = $_POST["name"];
-  $email = $_POST["email"];
-  $subject = $_POST["subject"];
-  $message = $_POST["message"];
-
-  $mail = new PHPMailer(true);
-  $mail->IsSMTP(); // telling the class to use SMTP
-  $mail->SMTPOptions = array(
-      'ssl' => array(
-          'verify_peer' => false,
-          'verify_peer_name' => false,
-          'allow_self_signed' => true
-      )
-  );
-  $mail->SMTPAuth = true; // enable SMTP authentication
-  $mail->SMTPSecure = "tls"; // sets the prefix to the servier
-  $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server
-  $mail->Port = 587; // set the SMTP port for the GMAIL server
-  $mail->Username = "termowiki@gmail.com"; // GMAIL username
-  $mail->Password = "dhhruoocvtrujpbh"; // GMAIL password
-  $mail->IsHTML(true);
-  $mail->AddAddress($_POST["email"], $_POST["name"]);
-  $mail->SetFrom("info@startwithus.com", "StartWithUs");
-  $mail->Subject = ($_POST["subject"]);
-  $mail->Body = ($_POST["message"]);
-  try{
-      $mail->Send();
-      echo
-      "<script> alert('Verifique o seu email!'); </script>";
-  } catch(Exception $e){
-      //Something went bad
-      echo $mail->ErrorInfo;
-  } 
-}
-
 ?>
 
 
@@ -801,7 +757,7 @@ if(isset($_POST["submit"])){
           
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="index.php" method="post" role="form">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -816,8 +772,12 @@ if(isset($_POST["submit"])){
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <br>
-              <div class="text-center"><button name="submit">Send Message</button></div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
 
           </div>
