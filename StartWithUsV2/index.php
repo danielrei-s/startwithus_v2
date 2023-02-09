@@ -98,18 +98,6 @@ if( empty( $_SESSION['id'] )){
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="">Business Angels</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-paint-brush-line"></i>
-            <h3><a href="">Investors</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
             <i class="ri-database-2-line"></i>
             <h3><a href="">Became a member</a></h3>
           </div>
@@ -219,8 +207,8 @@ if( empty( $_SESSION['id'] )){
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Qlqer coisa</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="">Vision</a></h4>
+              <p>We want to facilitate the creation of opportunities in order to make the business world more dynamic</p>
             </div>
           </div>
 
