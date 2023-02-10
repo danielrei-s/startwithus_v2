@@ -192,7 +192,9 @@ if (mysqli_num_rows($result) > 0){
                    <?php if ($exists == TRUE){
                       echo "<b>Premium information: </b>";
                       echo $extended;
-                      echo '<br><br><a href="mensagens.php?idProjeto=2&owner=n" rel="ajaxpanel" id="MySlideBar">	Invest here!</a>	';
+                      echo '<br><br><a href="mensagens.php?idProjeto=2&owner=n" rel="ajaxpanel" id="MySlideBar" style="margin-right: 20px;">
+                      <img src="assets/img/invest.jpg" alt="Invest button">
+                    </a>	';
                       
                    } else { ?>  
                    <h2>Wanna know more? Subscribe to this project!</h2>
@@ -207,7 +209,7 @@ if (mysqli_num_rows($result) > 0){
                           <input type="hidden" name="amount" value="7.50"> 
                           <input type="hidden" name="currency_code" value="EUR">
                           <!-- Display the payment button. --> 
-                          <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> 
+                          <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" alt="Subscribe"> 
                           <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
                       </form>
                        </div>

@@ -114,7 +114,7 @@ ini_set('default_charset', 'ISO8859-1');
                 <li><i class="bi bi-x-circle"></i>      Costumer support 24/7</li>
                 <li><i class="bi bi-x-circle"></i>      Project comparison (head-to-head)</li>
               </ul>
-              <a href="index.php#portfolio" class="get-started-btn">Get Started</a>
+              <a href="index.php#portfolio" class="get-started-btn">Buy Now</a>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ ini_set('default_charset', 'ISO8859-1');
                 <li><i class="bi bi-check-circle-fill"></i> Costumer support 24/7</li>
                 <li><i class="bi bi-x-circle"></i> Project comparison (head-to-head)</li>
               </ul>
-              <a href="index.php#portfolio" class="get-started-btn">Get Started</a>
+              <a href="index.php#portfolio" class="get-started-btn">Buy Now</a>
             </div>
           </div>
 
@@ -144,7 +144,7 @@ ini_set('default_charset', 'ISO8859-1');
                 <li><i class="bi bi-check-circle-fill"></i> Costumer support 24/7</li>
                 <li><i class="bi bi-check-circle-fill"></i> Project comparison (head-to-head)</li>
               </ul>
-              <a href="index.php#portfolio" class="get-started-btn">Get Started</a>
+              <a href="index.php#portfolio" class="get-started-btn">Buy Now</a>
             </div>
           </div>
 
