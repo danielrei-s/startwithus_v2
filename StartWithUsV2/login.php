@@ -28,7 +28,7 @@ if(isset($_POST["login"])){
           $msgErr = "O seu utilizador foi suspenso, contacte o moderador!";
         }
         elseif($password == $row["password"]){
-          $_SESSION["id"] = $row["idUser"];
+          $_SESSION['id'] = $row["idUser"];
           $_SESSION['login'] = TRUE;
           if (($row["idType"]) == 2){
               header("Location: index.php");

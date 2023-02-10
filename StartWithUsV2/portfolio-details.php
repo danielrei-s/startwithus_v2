@@ -5,19 +5,32 @@ session_start();
 
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
+include ("connect.php");
+
+if(empty($_SESSION["id"])){
+  header("Location: login.php");
+}
+
+$error = ' ';
+$exists = false;
 $currentproject = 5;
-$idUser = $_SESSION["id"];
-$query1 = "SELECT idUser FROM project_fullreaders WHERE idProject =" . $currentproject;
+$idUser = $_SESSION['id'];
+$query1 = "SELECT idUser FROM projects_fullreaders WHERE idProject =" . $currentproject;
+
 $result1 = mysqli_query($conn, $query1);
-$row1 = mysqli_fetch_assoc($result1);
-if (mysqli_num_rows($result1) > 0){
-  if ($idUser == $row1){
-    $exists = TRUE;
-  }else{
-    $exists = FALSE;
+if ($result1) {
+  if (mysqli_num_rows($result1) > 0) {
+    $row1 = mysqli_fetch_assoc($result1);
+    if (isset($row1['idUser'])) {
+      if ($idUser == $row1['idUser']) {
+        $exists = true;
+      } else {
+        $error = "You're not subscribed to this project";
+      }
+    } else {
+      $error = "Error retrieving subscription information";
+    }
   }
-}else{
-  $error = "Erro";
 }
 
 $query = "SELECT * FROM projects WHERE idProject = " . $currentproject;
@@ -34,6 +47,7 @@ if (mysqli_num_rows($result) > 0){
 <html lang="en">
 
 <head>
+  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -41,6 +55,18 @@ if (mysqli_num_rows($result) > 0){
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<link rel="stylesheet" type="text/css" href="ddajaxsidepanel.css" />
+
+<script src="ddajaxsidepanel.js">
+
+/***********************************************
+* Ajax Side Panel script- (c) Dynamic Drive (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+</script>
   <!-- Favicons -->
   <link href="assets/img/companyLogo.png" rel="icon">
 
@@ -81,7 +107,7 @@ if (mysqli_num_rows($result) > 0){
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+      <a href="close_session.php" class="get-started-btn scrollto">LOGOUT</a>
 
     </div>
   </header><!-- End Header -->
@@ -142,26 +168,35 @@ if (mysqli_num_rows($result) > 0){
             </div>
             <div class="portfolio-description">
               <h2>Honeycomb Tea Holder</h2>
-              <p> <?php echo $summary?> </p>
-                   <?php if ($exists == TRUE){} ?>  
-                   <h2>Liked this project? Become an Investor!</h2>
+                  <p> <?php 
+                        echo $summary;
+                      ?>
+                  </p>
+                  
+                   <?php if ($exists == TRUE){
+                      echo "<b>Premium information: </b>";
+                      echo $extended;
+                      echo '<br><br><a href="mensagens.php?idProjeto=2&owner=n" rel="ajaxpanel" id="MySlideBar">	Invest here!</a>	';
+                      
+                   } else { ?>  
+                   <h2>Wanna know more? Subscribe to this project!</h2>
                    <div class="d-flex justify-content-center">
-                   <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 
-                     <!-- Identify your business so that you can collect the payments. -->
-                     <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
-                     <!-- Specify a Buy Now button. --> <input type="hidden" name="cmd" value="_xclick">
-                     <!-- Specify details about the item that buyers will purchase. --> 
-                     <input type="hidden" name="item_name" value="Premium Umbrella"> 
-                     <input type="hidden" name="amount" value="50.00"> 
-                     <input type="hidden" name="currency_code" value="USD"> <!-- Provide a drop-down menu option field. --> 
-                     <input type="hidden" name="on0" value="Type">Type of umbrella <br /> <select name="os0"> 
-                       <option value="Select Type">-- Select Type --</option> <option value="Standard">Investor</option>
-                       <option value="Collapsable">Expert</option> </select> <br /> <!-- Display the payment button. --> 
-                       <br>
-                       <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> 
-                       <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" > 
+                      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                          <!-- Identify your business so that you can collect the payments. -->
+                          <input type="hidden" name="business" value="herschelgomez@xyzzyu.com">
+                          <!-- Specify a Buy Now button. --> 
+                          <input type="hidden" name="cmd" value="_xclick">
+                          <!-- Specify details about the item that buyers will purchase. --> 
+                          <input type="hidden" name="item_name" value="Premium Access"> 
+                          <input type="hidden" name="amount" value="7.50"> 
+                          <input type="hidden" name="currency_code" value="EUR">
+                          <!-- Display the payment button. --> 
+                          <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now"> 
+                          <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
                       </form>
-                   </div>
+                       </div>
+                   
+                   <?php } ?>
               </div>
             </div>
             </div>
