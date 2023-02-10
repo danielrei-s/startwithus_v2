@@ -1,24 +1,29 @@
 <?php
 session_start();
+include ("connect.php");
+
+ 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ 
+    // collect value of input field
+    $idProject= $_POST["idProject"];
+    $idAction= $_POST["idAction"];
+    $idSender= $_POST["idSender"];
+    $idReceiver= $_POST["idReceiver"];
+    $sendDate= $_POST["sendDate"];
+    $mFlag= $_POST["mFlag"];
+    $proposalValue= $_POST["proposalValue"];
+    $proposalPercentage= $_POST["proposalPercentage"];
+    $counterProposalValue= $_POST["counterProposalValue"];
+    $counterProposalPercentage= $_POST["counterProposalPercentage"];
+    $sql = "INSERT INTO messages (idProject, idAction, idSender, idReceiver,sendDate, mFlag,proposalValue, proposalPercentage, counterProposalValue, counterProposalPercentage, Accept, PaymentConfirmed) VALUES ('".$idProject."','".$idAction."','".$idSender."','".$idReceiver."','".$sendDate."','".$mFlag."','".$proposalValue."','".$proposalPercentage."','".$counterProposalValue."','0','0')";
+    // $sql="insert into messages (idProject, user_validator ,ano, mes) values ('".$utilizador."','".$validador."','".$ano."','".$mes."')";
+    echo $sql;
+    // $rs = $this->_bd->query_exec($sql);
+
+}
 
 
-$idProject= $_GET["idProject"];
-$idAction= $_GET["idAction"];
-$idSender= $_GET["idSender"];
-$idReceiver= $_GET["idReceiver"];
-$sendDate= $_GET["sendDate"];
-$type= $_GET["type"];
-$proposalValue= $_GET["proposalValue"];
-$proposalPercentage= $_GET["proposalPercentage"];
-$counterProposalValue= $_GET["counterProposalValue"];
-$counterProposalPercentage= $_GET["counterProposalPercentage"];
-$Accept= $_GET["Accept"];
-$PaymentConfirmed= $_GET["PaymentConfirmed"];
-
-echo $idProject || "<br>";
-
-
-echo $idAction;
 
 
 
