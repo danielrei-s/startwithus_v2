@@ -267,25 +267,37 @@ background: lightblue;
 								      	<tr>
 										    <td >
 													<?php 
-                          $idUser = '4';
-														$array =  mysqli_query($conn, "SELECT Distinct idProject, idSender FROM messages WHERE idAction = $idUser");
-														while ($arr = mysqli_fetch_array($array)) 
+                          $idUser = '3';
+														$arrayUnique =  mysqli_query($conn, "SELECT Distinct idProject, idAction FROM messages WHERE (idSender = $idUser or idReceiver = $idUser)");
+														while ($arrUnique = mysqli_fetch_array($arrayUnique)) 
 														 {
-                              $projectRow =  mysqli_query($conn, "SELECT Distinct projectName FROM Projects WHERE idProject = $arr[0]");
-                              $projectName = mysqli_fetch_assoc($projectRow);
-                              
-                              $userRow =  mysqli_query($conn, "SELECT Distinct firstName FROM Users WHERE idUser = $arr[1]");
-                              $FirstName = mysqli_fetch_assoc($userRow);                         
+                              $projectsRows =  mysqli_query($conn, "SELECT Distinct idOwner, projectName FROM Projects WHERE idProject = $arrUnique[0]");
+                              $projectRow = mysqli_fetch_assoc($projectsRows);
+                              $array = mysqli_query($conn, "SELECT * FROM messages WHERE idAction = $arrUnique[1] LIMIT 1");
+                              $arr = mysqli_fetch_assoc($array);
+                              if($arr["idSender"] == $projectRow["idOwner"])
+                              {
+                                $angelID = $arr["idReceiver"];
+                              }
+                              else{
+                                $angelID = $arr["idSender"];  
+                              }
+
+
+
+                              $userRows =  mysqli_query($conn, "SELECT Distinct firstName FROM Users WHERE idUser = $angelID");
+                              $userRow = mysqli_fetch_assoc($userRows);                         
 
                                                
  
-                               if($idUser == $arr["idSender"])
+                               if($idUser!= $projectRow["idOwner"])
                                {
-                                 $tituloConj = $projectName["projectName"];
+                                 $tituloConj = $projectRow["projectName"];
                                 // $tituloConj = $arr[1];
                                }else
                                {
-                                 $tituloConj = $projectName["projectName"]." - ".$FirstName["firstName"];
+
+                                 $tituloConj = $projectRow["projectName"]." - ".$userRow["firstName"];
                                }
 
 												 ?>
@@ -319,7 +331,7 @@ background: lightblue;
 
 																		<?php	
 																  	
-																			$array_det=mysqli_query($conn, "SELECT * FROM messages WHERE idProject = $arr[0] order by sendDate DESC");
+																			$array_det=mysqli_query($conn, "SELECT * FROM messages WHERE idAction = $arrUnique[1] order by sendDate DESC");
 																			// $cor = '#E0E0E0';
                                       $contador = 0;
                                       $cor = '#757575';
@@ -341,15 +353,17 @@ background: lightblue;
 																						<!-- <td class="texto_pequeno" bgcolor="<?php echo $cor ?>" ><?php echo $arr_det[1] ?></td>												
 																						<td class="texto_pequeno" bgcolor="<?php echo $cor ?>" ><?php echo $arr_det[2] ?></td> -->
                                             <?php 
+                                            $idmsg = $arr_det["id"];
+                                            $alteramFlagQuery=mysqli_query($conn, "UPDATE messages SET mFlag ='1' WHERE id=$idmsg");
                                             if($arr_det["idAction"] == $arr_det["idSender"])
                                             {
-                                              $from = $FirstName["firstName"];
+                                              $from = $userRow["firstName"];
                                               $to = "Owner";
                                               $proposalV = $arr_det["proposalValue"];
                                               $proposalP = $arr_det["proposalPercentage"];
                                             }else{
                                               $from = "Owner";
-                                              $to = $FirstName["firstName"]; 
+                                              $to = $userRow["firstName"]; 
                                               $proposalV = $arr_det["counterProposalValue"];
                                               $proposalP = $arr_det["counterProposalPercentage"];                                             
                                             }

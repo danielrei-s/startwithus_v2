@@ -64,10 +64,12 @@ if( empty( $_SESSION['id'] )){
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          
           <?php
+          
             if( !empty( $_SESSION['id'] )){
               $idUser = $_SESSION['id'];
-              $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = '4' and mFlag = '0'" );
+              $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = $idUser and mFlag = '0'" );
               $row = mysqli_fetch_assoc($result);
               if( !$row){
                 ?>
