@@ -5,6 +5,28 @@ session_start();
 
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
+$currentproject = 5;
+$idUser = $_SESSION["id"];
+$query1 = "SELECT idUser FROM project_fullreaders WHERE idProject =" . $currentproject;
+$result1 = mysqli_query($conn, $query1);
+$row1 = mysqli_fetch_assoc($result1);
+if (mysqli_num_rows($result1) > 0){
+  if ($idUser == $row1){
+    $exists = TRUE;
+  }else{
+    $exists = FALSE;
+  }
+}else{
+  $error = "Erro";
+}
+
+$query = "SELECT * FROM projects WHERE idProject = " . $currentproject;
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
+if (mysqli_num_rows($result) > 0){
+  $summary = $row["summaryDescription"];
+  $extended = $row["extendedDescription"];
+}
 
 ?>
 
@@ -120,14 +142,8 @@ ini_set('default_charset', 'ISO8859-1');
             </div>
             <div class="portfolio-description">
               <h2>Honeycomb Tea Holder</h2>
-              <p>
-              Introducing the Honeycomb Tea Holder! Each individual honeycomb
-               compartment holds a single tea bag or serving of loose leaf tea,
-                offering a fresh and flavorful cup every time. The compact and 
-                unique design makes it easy to take your tea on-the-go, while
-                 also adding a stylish touch to your kitchen counter or office desk.
-                  Say goodbye to messy tea bags and enjoy a perfect cup of tea
-                   with the Honeycomb Tea Holder! </p>  
+              <p> <?php echo $summary?> </p>
+                   <?php if ($exists == TRUE){} ?>  
                    <h2>Liked this project? Become an Investor!</h2>
                    <div class="d-flex justify-content-center">
                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 

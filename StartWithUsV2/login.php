@@ -13,7 +13,7 @@ $password = $email = "";
 include ("connect.php");
 
 if(!empty($_SESSION["id"])){
-  header("Location: subscrever.php");
+  header("Location: index.php");
 }
 if(isset($_POST["login"])){
   $email = $_POST["email"];
@@ -31,7 +31,7 @@ if(isset($_POST["login"])){
           $_SESSION["id"] = $row["idUser"];
           $_SESSION['login'] = TRUE;
           if (($row["idType"]) == 2){
-              header("Location: subscrever.php");
+              header("Location: index.php");
           }
           elseif(($row["idType"]) == 1){
               header("Location: index.php");

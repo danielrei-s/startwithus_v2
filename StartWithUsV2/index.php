@@ -265,7 +265,7 @@ if( empty( $_SESSION['id'] )){
         <div class="text-center">
           <h3>Host your project with us!</h3>
           <p> Register your project with us and start today looking for investors to kick start your business.</p>
-          <a class="cta-btn" href="registar.php">Register now!</a>
+          <a class="cta-btn" href="subscrever.php">Register now!</a>
         </div>
 
       </div>
