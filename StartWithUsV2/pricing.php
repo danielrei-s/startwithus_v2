@@ -98,7 +98,7 @@ ini_set('default_charset', 'ISO8859-1');
 <section id="pricing" class="section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Plant the seeds of your success with <span>US</span> and watch them blossom into realities.</h2>
+          <h2>Plant the seeds of your success with <span>us</span> and watch them blossom into realities.</h2>
           <span class="section-divider"></span>
         </div>
         <div class="row">
