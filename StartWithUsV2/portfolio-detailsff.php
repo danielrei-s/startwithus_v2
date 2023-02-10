@@ -2,31 +2,10 @@
 
 //inicializar sess�o
 session_start();
-
+echo $_SESSION["id"];
+echo "Ola";
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
-$currentproject = 5;
-$idUser = $_SESSION["id"];
-$query1 = "SELECT idUser FROM project_fullreaders WHERE idProject =" . $currentproject;
-$result1 = mysqli_query($conn, $query1);
-$row1 = mysqli_fetch_assoc($result1);
-if (mysqli_num_rows($result1) > 0){
-  if ($idUser == $row1){
-    $exists = TRUE;
-  }else{
-    $exists = FALSE;
-  }
-}else{
-  $error = "Erro";
-}
-
-$query = "SELECT * FROM projects WHERE idProject = " . $currentproject;
-$result = mysqli_query($conn, $query);
-$row = mysqli_fetch_assoc($result);
-if (mysqli_num_rows($result) > 0){
-  $summary = $row["summaryDescription"];
-  $extended = $row["extendedDescription"];
-}
 
 ?>
 
@@ -34,6 +13,7 @@ if (mysqli_num_rows($result) > 0){
 <html lang="en">
 
 <head>
+  
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -41,6 +21,18 @@ if (mysqli_num_rows($result) > 0){
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<link rel="stylesheet" type="text/css" href="ddajaxsidepanel.css" />
+
+<script src="ddajaxsidepanel.js">
+
+/***********************************************
+* Ajax Side Panel script- (c) Dynamic Drive (www.dynamicdrive.com)
+* Please keep this notice intact
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+</script>
   <!-- Favicons -->
   <link href="assets/img/companyLogo.png" rel="icon">
 
@@ -71,12 +63,19 @@ if (mysqli_num_rows($result) > 0){
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
-          <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-          <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a href="centromensagens.php?idProjeto=2"><img width="30px" src="assets/img/mail.png" alt="Mail"></a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+</nav>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -142,8 +141,17 @@ if (mysqli_num_rows($result) > 0){
             </div>
             <div class="portfolio-description">
               <h2>Honeycomb Tea Holder</h2>
-              <p> <?php echo $summary?> </p>
-                   <?php if ($exists == TRUE){} ?>  
+              <a href="mensagens.php?idProjeto=2&owner=n" rel="ajaxpanel" id="MySlideBar">
+																									teste
+																								</a>			
+              <p>
+              Introducing the Honeycomb Tea Holder! Each individual honeycomb
+               compartment holds a single tea bag or serving of loose leaf tea,
+                offering a fresh and flavorful cup every time. The compact and 
+                unique design makes it easy to take your tea on-the-go, while
+                 also adding a stylish touch to your kitchen counter or office desk.
+                  Say goodbye to messy tea bags and enjoy a perfect cup of tea
+                   with the Honeycomb Tea Holder! </p>  
                    <h2>Liked this project? Become an Investor!</h2>
                    <div class="d-flex justify-content-center">
                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post"> 

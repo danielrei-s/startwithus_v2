@@ -13,7 +13,7 @@ include ("connect.php");
 // inicializa��o de vari�veis
 $nomeErr = $emailErr = $passwordErr= "";
 $nome = $email = $password = $hidden = $disabled = "";
-$query = "SELECT * FROM projects";
+$query = "SELECT * FROM projects"; //Todo o conteudo da tabela prjects
 $result = mysqli_query($conn, $query);
 
 ?>
@@ -95,22 +95,26 @@ $result = mysqli_query($conn, $query);
               <table class="awsome-table" id="hidden-table-info">                
                 <thead>
                 <tbody>
-                <th><h5>Name</h5></th>
+                <th><h5>Project</h5></th>
                 <th><h5>Description</h5></th>
-                <th><h5>Evaluation</h5></th>
-                <th><h5>Price per stock</h5></th>
-                <th><h5>Investors</h5></th>
-                <th><h5>Business Angel</h5></th>
+                <th><h5>Raise Objective</h5></th>
+                <th><h5>Initial Date</h5></th>
+                <th><h5>Owner</h5></th>
+                <th><h5>Expert Needs</h5></th>
                 <th><h5>Details</h5></th>
                 <?php while($registo = mysqli_fetch_array($result)){ ?>
-                <?php for($x= 0; $x < mysqli_num_rows($result); $x++){?>
+                <?php for($x= 0; $x < mysqli_num_rows($result); $x++){
+                  $idOwner = $registo["idOwner"];
+                  $query2 = "SELECT * FROM users WHERE idUSER = " .$idOwner; //Saber quem é o owner pelo idOwner
+                  $result2 = mysqli_query($conn, $query2);
+                  $registo2 = mysqli_fetch_array($result2)?>
                 <tr>
-                    <td><?php echo $registo["name"];  ?></td>
-                    <td><?php echo $registo["description"];     ?></td>
-                    <td><?php echo $registo["valuation"]; ?></td>
-                    <td><?php echo $registo["price"]; ?></td>
-                    <td><?php if ($registo["investors"] = 1) { echo "Yes";} else { echo "No";} ?></td>
-                    <td><?php if ($registo["bangel"] = 1) { echo "Yes";} else { echo "No";} ?></td>
+                    <td><?php echo $registo["projectName"];  ?></td>
+                    <td><?php echo $registo["summaryDescription"];     ?></td>
+                    <td><?php echo $registo["raiseObjective"]; ?></td>
+                    <td><?php echo $registo["initialDate"]; ?></td>
+                    <td><?php echo $registo2["firstName"]; echo $registo2["lastName"];  ?></td>
+                    <td><?php echo $registo["expertNeeds"] ?></td>
                     <td><a class="nav-link scrollto active" href="portfolio-details.php">Learn more</a></td>
                         <?php break; } ?>
                 </tr>
@@ -131,8 +135,6 @@ $result = mysqli_query($conn, $query);
         <!-- /row -->
         </section>
         <!-- /wrapper -->
-
-
 
 <!-- ======= Footer ======= -->
   <footer id="footer">

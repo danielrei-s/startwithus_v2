@@ -61,7 +61,7 @@ h5 {
   }
 
   th {
-    background-color: #252525;
+    background-color: #ddd;
     font-weight: bold;
     color: #444;
     border-bottom: 2px solid #ddd;
@@ -76,7 +76,7 @@ h5 {
   }
 
   tr:hover {
-    background-color: #96956c;
+    background-color: #ddd;
     cursor: pointer;
   }
 
