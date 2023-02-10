@@ -245,7 +245,7 @@ if( empty( $_SESSION['id'] )){
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4>Value proposition</h4>
+              <h4>Value Proposition</h4>
               <p>We aim to be the experts in our field and offer complete protection, assistance, and professionalism to our stakeholders</p>
             </div>
           </div>
