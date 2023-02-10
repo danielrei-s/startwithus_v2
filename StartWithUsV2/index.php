@@ -8,9 +8,11 @@ ini_set('default_charset', 'ISO8859-1');
 if( empty( $_SESSION['id'] )){
   $var = "LOGIN / REGISTER";  //texto no botão
   $var2 = "login";            // Caminho de a href
+  $member = "registar";
 }else{
   $var = "LOGOUT";            //texto no botão
   $var2 = "close_session";    // Caminho de a href
+  $member = "pricing";
 }
 ?>
 
@@ -121,7 +123,7 @@ if( empty( $_SESSION['id'] )){
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="registar.php">Became a member</a></h3>
+            <h3><a href="<?= $member;?>.php">Became a member</a></h3>
           </div>
         </div>
       </div>
