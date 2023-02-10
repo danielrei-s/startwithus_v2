@@ -267,7 +267,7 @@ background: lightblue;
 								      	<tr>
 										    <td >
 													<?php 
-                          $idUser = '3';
+                          $idUser = '4';
 														$arrayUnique =  mysqli_query($conn, "SELECT Distinct idProject, idAction FROM messages WHERE (idSender = $idUser or idReceiver = $idUser)");
 														while ($arrUnique = mysqli_fetch_array($arrayUnique)) 
 														 {
@@ -355,7 +355,7 @@ background: lightblue;
                                             <?php 
                                             $idmsg = $arr_det["id"];
                                             $alteramFlagQuery=mysqli_query($conn, "UPDATE messages SET mFlag ='1' WHERE id=$idmsg");
-                                            if($arr_det["idAction"] == $arr_det["idSender"])
+                                            if($projectRow["idOwner"] != $arr_det["idSender"])
                                             {
                                               $from = $userRow["firstName"];
                                               $to = "Owner";
