@@ -31,10 +31,10 @@ if(isset($_POST["register"])){
     
     if(mysqli_num_rows($duplicateemail) > 0){
         echo
-        "<script> alert('O email inserido já se encontra registado!'); </script>";
+        "<script> alert('This e-mail is already in use, try recovering your account'); </script>";
     } elseif($age->format("%y") < 18){
         echo
-        "<script> alert('Tens de ter mais de 18 anos para te registares!'); </script>";
+        "<script> alert('You must be 18 and above to join StartWithUs'); </script>";
     }
     else{
         if($password == $confirmpassword){
@@ -58,7 +58,7 @@ if(isset($_POST["register"])){
             $mail->IsHTML(true);
             $mail->AddAddress($_POST["email"], $_POST["username"]);
             $mail->SetFrom("info@startwithus.com", "StartWithUs");
-            $mail->Subject = "Por favor valide o seu email";
+            $mail->Subject = "Verify your e-mail here: ";
             $mail->Body = '
             <p>Bem-Vindo</p>
             <p><a href="http://localhost/startwithus_v2/StartWithUsV2/validar.php?token='.$token.'&email='.$_POST['email'].'">Clique aqui para validar o seu email</a></p>
@@ -66,7 +66,7 @@ if(isset($_POST["register"])){
             try{
                 $mail->Send();
                 echo
-                "<script> alert('Verifique o seu email para validar e finalizar o registo!'); window.location.href='login.php'; </script>";
+                "<script> alert('Verify your e-mail to get access here: '); window.location.href='login.php'; </script>";
             } catch(Exception $e){
                 //Something went bad
                 echo $mail->ErrorInfo;
@@ -74,7 +74,7 @@ if(isset($_POST["register"])){
         }
         else{
             echo
-            "<script> alert('As passwords não coincidem!'); </script>";
+            "<script> alert('Passwords do not match. Try again'); </script>";
         }
     }
 }
