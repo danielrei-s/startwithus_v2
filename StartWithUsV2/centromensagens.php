@@ -323,9 +323,9 @@ background: lightblue;
 																					<td bgcolor="#535353" Style="Color: #ffc451" align="center" width="20%"> To </td>
                                           <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="10%"> Proposal Value</td>
                                           <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="10%"> Proposal Percentage </td>
-                                          <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="5%"> Contra-proposta </td>
-                                          <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="5%"> Aceitar </td>
-                                          <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="5%" > Declinar</td>
+                                          <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="5%"> Counter-Proposal</td>
+                                          <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="5%"> Accept </td>
+                                          <td bgcolor="#535353" Style="Color: #ffc451" align="center" width="5%" > Decline</td>
                                           <td Style="border:0"></td>
 																				</tr>
 

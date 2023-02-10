@@ -16,10 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $proposalPercentage= $_POST["proposalPercentage"];
     $counterProposalValue= $_POST["counterProposalValue"];
     $counterProposalPercentage= $_POST["counterProposalPercentage"];
-    $sql = "INSERT INTO messages (idProject, idAction, idSender, idReceiver,sendDate, mFlag,proposalValue, proposalPercentage, counterProposalValue, counterProposalPercentage, Accept, PaymentConfirmed) VALUES ('".$idProject."','".$idAction."','".$idSender."','".$idReceiver."','".$sendDate."','".$mFlag."','".$proposalValue."','".$proposalPercentage."','".$counterProposalValue."','0','0')";
+    $sql = "INSERT INTO messages (idProject, idAction, idSender, idReceiver,sendDate, mFlag,proposalValue, proposalPercentage, counterProposalValue, counterProposalPercentage, Accept, PaymentConfirmed) 
+    VALUES ('".$idProject."','".$idAction."','".$idSender."','".$idReceiver."','".$sendDate."','".$mFlag."','".$proposalValue."','".$proposalPercentage."','".$counterProposalValue."','".$counterProposalPercentage."','0','0')";
     // $sql="insert into messages (idProject, user_validator ,ano, mes) values ('".$utilizador."','".$validador."','".$ano."','".$mes."')";
     echo $sql;
-    // $rs = $this->_bd->query_exec($sql);
+    $rs = mysqli_query($conn,$sql);
 
 }
 

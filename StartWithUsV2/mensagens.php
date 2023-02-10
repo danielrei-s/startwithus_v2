@@ -110,7 +110,7 @@ $result = mysqli_query($conn,"SELECT * FROM users WHERE idUser = $idUser");
         }
         $idSender= $idUser;
         $idReceiver= $projectsOwner["idOwner"];
-        $sendDate= "";
+        // $sendDate= now();
         $mFlag= "0";
         $proposalValue= "0";
         $proposalPercentage= "0";
@@ -140,7 +140,7 @@ $result = mysqli_query($conn,"SELECT * FROM users WHERE idUser = $idUser");
       <input type="hidden" id="idReceiver" name="idReceiver" value="<?php  echo $idReceiver ?>">
 
       <label for="sendDate">Data de Envio:</label>
-      <input type="text" id="sendDate" name="sendDate" size="10" value="<?php echo date('d-m-Y H:i:s'); ?>"><br><br>
+      <input type="text" id="sendDate" name="sendDate" size="10" value="<?php echo date('d-m-Y'); ?>"><br><br>
 
 
       <label for="type"style="display:none;">mFlag:</label>
