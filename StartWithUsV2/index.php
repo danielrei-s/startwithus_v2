@@ -1,7 +1,7 @@
 <?php
 //inicializar sess�o
 session_start();
-
+include ("connect.php");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
@@ -64,6 +64,27 @@ if( empty( $_SESSION['id'] )){
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          
+          <?php
+          
+            if( !empty( $_SESSION['id'] )){
+              $idUser = $_SESSION['id'];
+              $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = $idUser and mFlag = '0'" );
+              $row = mysqli_fetch_assoc($result);
+              if( !$row){
+                ?>
+                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mail.png" alt="Mail"></a></li>
+                <?php
+              }else
+              {
+                ?>
+                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mailNew.png" alt="Mail"></a></li>
+                <?php                
+              }
+              ?>
+              <?php
+            }
+          ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -207,52 +228,27 @@ if( empty( $_SESSION['id'] )){
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Qlqer coisa</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4>Vision</h4>
+              <p>Our vision is to be a recognizable company with a strong brand image, to be the pioneer in our target market and the first choice for customers</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Full transparency</a></h4>
-              <p>Share your project public details.php everyone and keep the important information for investors only</p>
+              <h4>Mission</h4>
+              <p>Our platform connects entrepreneurs with business angels and experts, providing a simplified communication and interaction space to secure financing and gain knowledge for their projects</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Fast delivery</a></h4>
-              <p>With the best reach in the market you'll have dozens of investors to choose from </p>
+              <h4>Value proposition</h4>
+              <p>We aim to be the experts in our field and offer complete protection, assistance, and professionalism to our stakeholders</p>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 " data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Fund Rasing</a></h4>
-              <p>Organized fund rasing to seed your project and gather the best professinoals in the industry</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Promotinal video</a></h4>
-              <p> 3 minute long video promoting your idea to investors and business angles</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">Commitment </a></h4>
-              <p>We belive in a thorough follow up of the project and will help your project until the finish line</p>
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -475,10 +471,9 @@ if( empty( $_SESSION['id'] )){
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  StartWithUs provided my ideia de infrastructure needed to grow into the business that it is today. 
+                  Start With Us has changed the game for me as an entrepreneur. I never thought I could easily connect with potential investors and technical specialists all in one platform. It's a game changer! 
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -488,10 +483,9 @@ if( empty( $_SESSION['id'] )){
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Algo interessante sobre o negocio dela...
+                  I've been looking for a platform like Start With Us for years! As an investor, I can quickly and efficiently find the best business ideas to invest in. It's a must-have for anyone in the industry.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -501,10 +495,9 @@ if( empty( $_SESSION['id'] )){
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Algo interessante sobre o negocio dela....
+                  Start With Us has made my search for the perfect business idea a breeze. The succinct and summarized exposure of each idea allows me to quickly find the ones that spark my interest. Highly recommend!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -514,10 +507,9 @@ if( empty( $_SESSION['id'] )){
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Algo interessante sobre o negocio dela....
+                  As a technical specialist, I've found the perfect platform to showcase my skills and connect with potential business partners. Start With Us has opened up endless opportunities for me.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -527,10 +519,9 @@ if( empty( $_SESSION['id'] )){
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Algo interessante sobre o negocio dela....
+                  The restricted communication on Start With Us has made my search for the perfect business opportunity so much easier. I can interact with potential partners without feeling overwhelmed.
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>

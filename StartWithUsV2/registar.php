@@ -147,44 +147,44 @@ if(isset($_POST["register"])){
             <form class="form-group" method="post" action="registar.php" style="background-color: transparent;">
               <div class="row">
                 <div class="col-lg-6">
-                  <label for="firstName"></label>
+                  <label for="firstName">First Name</label>
                   <input type="text" class="form-control" name="firstName" id="firstName"
                     placeholder="Enter your first name" autofocus required>
                 </div>
                 <div class="col-lg-6">
-                  <label for="lastName"></label>
+                  <label for="lastName">Last Name</label>
                   <input type="text" class="form-control" name="lastName" id="lastName"
                     placeholder="Enter your last name" required>
                 </div>
                 <div class="col-lg-6">
-                  <label for="email"></label><br>
+                  <label for="email">Email</label><br>
                   <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email"
                     required>
                 </div>
                 <div class="col-lg-6">
-                  <label for="genre"></label>
+                  <label for="genre">Genre</label>
                   <select name="genre" class="form-control" id="genre" required>
                     <option value="M">Male</option>
                     <option value="F">Female</option>
                   </select>
                 </div>
                 <div class="col-lg-6">
-                  <label for="birthday"></label><br>
+                  <label for="birthday">Birthday Date</label><br>
                   <input type="date" class="form-control" name="birthday" id="birthday"
                     placeholder="Enter your birthday date" required>
                 </div>
                 <div class="col-lg-6">
-                  <label for="nif"></label>
+                  <label for="nif">NIF</label>
                   <input type="number" class="form-control" name="nif" id="nif"
                     placeholder="Enter your NIF" autofocus required>
                 </div>
                 <div class="col-lg-6">
-                  <label for="password"></label>
+                  <label for="password">Password</label>
                   <input type="password" class="form-control" name="password_1" id="password_1"
                     placeholder="Enter your password" required>
                 </div>
                 <div class="col-lg-6">
-                  <label for="password"></label>
+                  <label for="password">Re-type Password</label>
                   <input type="password" class="form-control" name="password_2" id="password_2"
                     placeholder="Re-type your password" required> <br>
                 </div>

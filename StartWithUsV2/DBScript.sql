@@ -34,7 +34,7 @@ INSERT INTO `users` (`idType`, `firstName`, `lastName`, `birthdayDate`, `genre`,
 
 CREATE TABLE Projects (
 idProject INT NOT NULL AUTO_INCREMENT,
-projectName VARCHAR(255) NOT NULL,
+projectName TEXT NOT NULL,
 idOwner INT NOT NULL,
 initialDate DATE NOT NULL,
 summaryDescription VARCHAR(255) NOT NULL,
@@ -44,9 +44,9 @@ expertNeeds VARCHAR(255) NOT NULL,
 PRIMARY KEY (idProject),
 FOREIGN KEY (idOwner) REFERENCES Users(idUser)
 );
-INSERT INTO `projects`(`idOwner`, `projectName`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('9',  'Nome do Projecto 1',   '2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 1','Descrição extensiva do projeto Owner 1]','10000','N');
-INSERT INTO `projects`(`idOwner`, `projectName`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('9',  'Nome do Projecto 2',   '2023-02-07 11:40:06','Descrição Sumária do segundo Projeto Owner 1','Descrição extensiva do segundo projeto Owner 1','20000','N');
-INSERT INTO `projects`(`idOwner`, `projectName`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('10', 'Nome do Projecto 3',   '2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 2','Descrição extensiva do projeto do Owner 2','35000','N');
+INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('4','2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 1','Descrição extensiva do projeto Owner 1]','10000','N');
+INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('4','2023-02-07 11:40:06','Descrição Sumária do segundo Projeto Owner 1','Descrição extensiva do segundo projeto Owner 1','20000','N');
+INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('5','2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 2','Descrição extensiva do projeto do Owner 2','35000','N');
 CREATE TABLE Projects_Comparticipation (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
@@ -89,7 +89,7 @@ idAction int Not NULL,
 idSender INT NOT NULL,
 idReceiver INT NOT NULL,
 sendDate DATE NOT NULL,
-type VARCHAR(255) NOT NULL,
+mFlag bool,
 proposalValue DECIMAL(10,2) NOT NULL,
 proposalPercentage DECIMAL(5,2) NOT NULL,
 counterProposalValue DECIMAL(10,2) NOT NULL,
@@ -101,9 +101,16 @@ FOREIGN KEY (idProject) REFERENCES Projects(idProject),
 FOREIGN KEY (idSender) REFERENCES Users(idUser),
 FOREIGN KEY (idReceiver) REFERENCES Users(idUser)
 );
-INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `type`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','6','6','6','2023-01-07 11:40:06','','1000','5','','','0','0');
-INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `type`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','4','6','6','2023-01-010 11:40:06','','1000','5','2000','5','0','0');
-INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `type`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','4','6','6','2023-01-15 11:40:06','','2000','5','','','1','1');
-INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `type`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('3','6','6','6','2023-01-15 11:40:06','','2000','5','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','1','6','4','2023-01-07 11:40:06','1','1000','5','','','0','0');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','1','4','6','2023-01-010 11:40:06','0','1000','5','2000','5','0','0');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','1','6','4','2023-01-15 11:40:06','1','2000','5','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('3','2','6','5','2023-01-15 11:40:06','1','2000','5','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('3','3','5','7','2023-01-15 11:40:06','1','2000','5','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('3','4','3','5','2023-01-02 11:40:06','1','4000','6','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','5','3','4','2023-01-01 11:40:06','1','2000','5','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','6','7','4','2023-01-11 11:40:06','1','500','2','','','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','6','4','7','2023-01-12 11:40:06','1','6000','8','6000','6','1','1');
+INSERT INTO `messages`(`idProject`, `idAction`, `idSender`, `idReceiver`, `sendDate`, `mFlag`, `proposalValue`, `proposalPercentage`, `counterProposalValue`, `counterProposalPercentage`, `Accept`, `PaymentConfirmed`) VALUES ('2','7','2','4','2023-01-12 11:40:06','1','6000','8','6000','6','1','1');
+
 
 
