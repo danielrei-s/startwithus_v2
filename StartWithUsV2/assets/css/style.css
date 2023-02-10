@@ -50,25 +50,22 @@ h5 {
     overflow: hidden;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   }
+  .awesome-table th{
+    color: #151515;
+  }
 
-  
-
-  th,
   td {
     padding: 20px;
     text-align: center;
     border: 1px solid #ddd;
+    color: rgb(255, 255, 255);
   }
 
   th {
-    background-color: #ddd;
+    background-color: #444;
     font-weight: bold;
     color: #444;
     border-bottom: 2px solid #ddd;
-  }
-
-  td {
-    color: rgb(255, 255, 255);
   }
 
   tr:nth-child(even) {

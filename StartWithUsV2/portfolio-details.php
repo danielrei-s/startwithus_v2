@@ -103,6 +103,22 @@ if (mysqli_num_rows($result) > 0){
           <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
+          <?php
+              if ( !empty( $_SESSION['id'] )) {
+                $idUser = $_SESSION['id'];
+                $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = $idUser and mFlag = '0'" );
+                $row = mysqli_fetch_assoc($result);
+                if (!$row) {
+            ?>
+                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mail.png" alt="Mail"></a></li>
+            <?php
+              } else {
+            ?>
+                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mailNew.png" alt="Mail"></a></li>
+            <?php                
+              }
+            }
+            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

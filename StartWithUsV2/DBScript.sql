@@ -30,6 +30,8 @@ INSERT INTO `users` (`idType`, `firstName`, `lastName`, `birthdayDate`, `genre`,
 (2, 'Angel1', 'Angel1', '1977-06-12', 'M', 'angel1@startwithus.com', 'c4b0df2812', 1, '1111', '2023-02-07 11:40:06', NULL, 1, '25445884112');
 INSERT INTO `users` (`idType`, `firstName`, `lastName`, `birthdayDate`, `genre`, `email`, `token`, `emailValidation`, `password`, `dateCreated`, `dateModified`, `status`, `nif`) VALUES
 (2, 'Angel2', 'Angel2', '1977-06-12', 'M', 'angel2@startwithus.com', 'c4b0df2812', 1, '1111', '2023-02-07 11:40:06', NULL, 1, '25445884112');
+INSERT INTO `users` (`idType`, `firstName`, `lastName`, `birthdayDate`, `genre`, `email`, `token`, `emailValidation`, `password`, `dateCreated`, `dateModified`, `status`, `nif`) VALUES
+(2, 'John', 'Doe', '1977-06-12', 'M', 'admin@admin.pt', 'admin', 1, '1111', '2023-02-07 11:40:06', NULL, 1, '25445884112');
 
 
 CREATE TABLE Projects (
@@ -44,9 +46,9 @@ expertNeeds VARCHAR(255) NOT NULL,
 PRIMARY KEY (idProject),
 FOREIGN KEY (idOwner) REFERENCES Users(idUser)
 );
-INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('4','2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 1','Descrição extensiva do projeto Owner 1]','10000','N');
-INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('4','2023-02-07 11:40:06','Descrição Sumária do segundo Projeto Owner 1','Descrição extensiva do segundo projeto Owner 1','20000','N');
-INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('5','2023-02-07 11:40:06','Descrição Sumária do Projeto do Owner 2','Descrição extensiva do projeto do Owner 2','35000','N');
+INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('4','2023-02-07 11:40:06','Quick description project 3','Long description Owner 1','10000','N');
+INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('4','2023-02-07 11:40:06','Quick description project 4','Long description projeto Owner 1','20000','N');
+INSERT INTO `projects`(`idOwner`, `initialDate`, `summaryDescription`, `extendedDescription`, `raiseObjective`, `expertNeeds`) VALUES ('8','2023-02-07 11:40:06','Introducing the Honeycomb Tea Holder! Each individual honeycomb compartment holds a single tea bag or serving of loose leaf tea, offering a fresh and flavorful cup every time.','Investing in a tea infuser that looks like a honeycomb is a great business move for a number of reasons. Firstly, the design of the infuser is eye-catching and attractive. The honeycomb shape is unique and stands out from other infusers, and it could be used as a visual marketing tool to draw in customers. Secondly, the honeycomb shape is also functional, as it maximizes the total surface area of the infuser, thus allowing for more efficient brews of tea. Furthermore, the honeycomb shape is incredibly durable, as it is made of high-quality materials that are designed to last for a long time, meaning it won't need to be replaced as often as other infusers. Finally, the honeycomb shape is also aesthetically pleasing, making it a great addition to any tea-lover's kitchen. All of these factors make investing in a tea infuser that looks like a honeycomb a great business move that can help to draw in more customers and increase profits.','35000','N');
 CREATE TABLE Projects_Comparticipation (
 id INT NOT NULL AUTO_INCREMENT,
 idProject INT NOT NULL,
@@ -68,7 +70,7 @@ FOREIGN KEY (idUser) REFERENCES Users(idUser)
 );
 INSERT INTO `projects_fullreaders`(`idProject`, `idUser`, `FinalDate`) VALUES ('2','6','2023-04-07 11:40:06');
 INSERT INTO `projects_fullreaders`(`idProject`, `idUser`, `FinalDate`) VALUES ('3','6','2023-04-07 11:40:06');
-
+INSERT INTO `projects_fullreaders`(`idProject`, `idUser`, `FinalDate`) VALUES ('5','8','2023-04-07 11:40:06');
 
 
 CREATE TABLE Experts (
