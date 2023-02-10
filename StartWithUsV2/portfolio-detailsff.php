@@ -71,8 +71,7 @@ ini_set('default_charset', 'ISO8859-1');
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="nav-link scrollto"  href="portfolio-detailsFF.php">DetaislFF</a></li>
-          <li><a href="centromensagens.php?idProjeto=2"><img width="30px" src="assets/img/mailNew.png" alt="Mail"></a></li>
+          <li><a href="centromensagens.php?idProjeto=2"><img width="30px" src="assets/img/mail.png" alt="Mail"></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
 </nav>

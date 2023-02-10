@@ -1,7 +1,7 @@
 <?php
 //inicializar sess�o
 session_start();
-
+include ("connect.php");
 // codifica��o de carateres
 ini_set('default_charset', 'ISO8859-1');
 
@@ -64,6 +64,25 @@ if( empty( $_SESSION['id'] )){
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <?php
+            if( !empty( $_SESSION['id'] )){
+              $idUser = $_SESSION['id'];
+              $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = '4' and mFlag = '0'" );
+              $row = mysqli_fetch_assoc($result);
+              if( !$row){
+                ?>
+                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mail.png" alt="Mail"></a></li>
+                <?php
+              }else
+              {
+                ?>
+                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mailNew.png" alt="Mail"></a></li>
+                <?php                
+              }
+              ?>
+              <?php
+            }
+          ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

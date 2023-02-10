@@ -21,14 +21,6 @@ $result = mysqli_query($conn,"SELECT * FROM users WHERE idUser = $idUser");
 
   $resultProjectsWithMessages =  mysqli_query($conn, "SELECT Distinct * FROM messages WHERE idAction = $idUser");
   $rowsProjectsAllMessages = null;
-  //$rowsProjectsWithMessages = mysqli_fetch_assoc($resultProjectsWithMessages);
-  //foreach ($resultProjectsWithMessages as $reg)
-  //{
-   // $idProjetoTemp = $reg["idProject"];
-    //$resultProjectsAllMessages =  mysqli_query($conn, "SELECT Distinct * FROM messages WHERE idProject = $idProjetoTemp");
-    //$rowsProjectsAllMessages += mysqli_fetch_assoc($resultProjectsAllMessages);    
-  // }
-
 
 ?>
 
@@ -240,8 +232,6 @@ background: lightblue;
           <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
-          <li><a class="nav-link scrollto"  href="portfolio-detailsFF.php">DetaislFF</a></li>
-          <li><a href="centromensagens.php">Message Center</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
