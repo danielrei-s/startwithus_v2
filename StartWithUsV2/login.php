@@ -22,10 +22,10 @@ if(isset($_POST["login"])){
   $row = mysqli_fetch_assoc($result);
       if (mysqli_num_rows($result) > 0){
         if(($row["emailValidation"]) == 0){
-          $msgErr = "Ainda não validou o seu email!";
+          $msgErr = "You haven't validated your email yet!";
         }
         elseif(($row["status"]) == 0){
-          $msgErr = "O seu utilizador foi suspenso, contacte o moderador!";
+          $msgErr = "Your user has been suspended, contact the moderator!";
         }
         elseif($password == $row["password"]){
           $_SESSION["id"] = $row["idUser"];
@@ -37,7 +37,7 @@ if(isset($_POST["login"])){
               header("Location: index.php");
           }
       } else {
-        $autErr ="PF verifique os dados de autenticação";
+        $autErr ="Please check your username and/or password!";
       }
   
       }
@@ -108,7 +108,7 @@ if(isset($_POST["login"])){
       ?>
       <br>
       <div class="alert alert-danger">
-        <h4 style="color:#842029;">Alerta!</h4>
+        <h4 style="color:#842029;">Alert!</h4>
         <?php
           echo $autErr;
           echo $emailErr;
