@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idAction= $_POST["idAction"];
     $idSender= $_POST["idSender"];
     $idReceiver= $_POST["idReceiver"];
-    $sendDate= $_POST["sendDate"];
+    $sendDate= date('Y-m-d');
     $mFlag= $_POST["mFlag"];
     $proposalValue= $_POST["proposalValue"];
     $proposalPercentage= $_POST["proposalPercentage"];
@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO messages (idProject, idAction, idSender, idReceiver,sendDate, mFlag,proposalValue, proposalPercentage, counterProposalValue, counterProposalPercentage, Accept, PaymentConfirmed) 
     VALUES ('".$idProject."','".$idAction."','".$idSender."','".$idReceiver."','".$sendDate."','".$mFlag."','".$proposalValue."','".$proposalPercentage."','".$counterProposalValue."','".$counterProposalPercentage."','0','0')";
     // $sql="insert into messages (idProject, user_validator ,ano, mes) values ('".$utilizador."','".$validador."','".$ano."','".$mes."')";
-    echo $sql;
     $rs = mysqli_query($conn,$sql);
 
 }
