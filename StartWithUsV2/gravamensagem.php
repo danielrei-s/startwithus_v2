@@ -20,12 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES ('".$idProject."','".$idAction."','".$idSender."','".$idReceiver."','".$sendDate."','".$mFlag."','".$proposalValue."','".$proposalPercentage."','".$counterProposalValue."','".$counterProposalPercentage."','0','0')";
     // $sql="insert into messages (idProject, user_validator ,ano, mes) values ('".$utilizador."','".$validador."','".$ano."','".$mes."')";
     $rs = mysqli_query($conn,$sql);
-
+    ?>
+    <script>
+         window.history.back();
+    </script>
+<?php
 }
-
-
-
-
 
 ?>
 
