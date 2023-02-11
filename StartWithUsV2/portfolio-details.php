@@ -13,25 +13,25 @@ if(empty($_SESSION["id"])){
 
 $error = ' ';
 $exists = false;
-$currentproject = 5;
+$currentproject = 3;
 $idUser = $_SESSION['id'];
 $query1 = "SELECT idUser FROM projects_fullreaders WHERE idProject =" . $currentproject;
 
 $result1 = mysqli_query($conn, $query1);
 if ($result1) {
-  if (mysqli_num_rows($result1) > 0) {
-    $row1 = mysqli_fetch_assoc($result1);
-    if (isset($row1['idUser'])) {
-      if ($idUser == $row1['idUser']) {
-        $exists = true;
-      } else {
-        $error = "You're not subscribed to this project";
-      }
-    } else {
-      $error = "Error retrieving subscription information";
+  while ($row1 = mysqli_fetch_assoc($result1)) {
+    if ($idUser == $row1['idUser']) {
+      $exists = true;
+      break;
     }
   }
+  if (!$exists) {
+    $error = "You're not subscribed to this project";
+  }
+} else {
+  $error = "Error retrieving subscription information";
 }
+
 
 $query = "SELECT * FROM projects WHERE idProject = " . $currentproject;
 $result = mysqli_query($conn, $query);
@@ -100,25 +100,9 @@ if (mysqli_num_rows($result) > 0){
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
           <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-          <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto active " href="index.php#portfolio">Project</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
-          <?php
-              if ( !empty( $_SESSION['id'] )) {
-                $idUser = $_SESSION['id'];
-                $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = $idUser and mFlag = '0'" );
-                $row = mysqli_fetch_assoc($result);
-                if (!$row) {
-            ?>
-                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mail.png" alt="Mail"></a></li>
-            <?php
-              } else {
-            ?>
-                <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mailNew.png" alt="Mail"></a></li>
-            <?php                
-              }
-            }
-            ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -135,10 +119,10 @@ if (mysqli_num_rows($result) > 0){
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
+          <h2>Project Details</h2>
           <ol>
             <li><a href="index.php">Home</a></li>
-            <li>Portfolio Details</li>
+            <li>Project Details</li>
           </ol>
         </div>
 
@@ -177,15 +161,17 @@ if (mysqli_num_rows($result) > 0){
               <h3>Project information</h3>
               <ul>
                 <li><strong>Category</strong>: Consumables</li>
-                <li><strong>Client</strong>: ASU Company</li>
+                <li><strong>Client</strong>: Bee's Company</li>
                 <li><strong>Project date</strong>: 01 March, 2022</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Project URL</strong>: <a href="#">www.honeycomb.com</a></li>
               </ul>
             </div>
             <div class="portfolio-description">
               <h2>Honeycomb Tea Holder</h2>
                   <p> <?php 
                         echo $summary;
+
+                        
                       ?>
                   </p>
                   
