@@ -61,7 +61,7 @@ if(isset($_POST["register"])){
             $mail->Subject = "Verify your e-mail here: ";
             $mail->Body = '
             <p>Bem-Vindo</p>
-            <p><a href="http://localhost/startwithus_v2/StartWithUsV2/validar.php?token='.$token.'&email='.$_POST['email'].'">Clique aqui para validar o seu email</a></p>
+            <p><a href="http://localhost/startwithus_v2/StartWithUsV2/validar.php?token='.$token.'&email='.$_POST['email'].'">Click here to validate your email</a></p>
             ';
             try{
                 $mail->Send();
