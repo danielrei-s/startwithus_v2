@@ -66,7 +66,7 @@ if( empty( $_SESSION['id'] )){
             <?php
               if ( !empty( $_SESSION['id'] )) {
                 $idUser = $_SESSION['id'];
-                $result = mysqli_query($conn,"SELECT * FROM messages WHERE idAction = $idUser and mFlag = '0'" );
+                $result = mysqli_query($conn,"SELECT * FROM messages WHERE idReceiver = $idUser and mFlag = '0'" );
                 $row = mysqli_fetch_assoc($result);
                 if (!$row) {
             ?>
@@ -74,7 +74,7 @@ if( empty( $_SESSION['id'] )){
             <?php
               } else {
             ?>
-                  <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mailNew.png" alt="Mail"></a></li>
+                  <li style="margin-left: 30px;"><a href="centromensagens.php"><img width="30px" src="assets/img/mailNew2.png" alt="Mail"></a></li>
             <?php                
               }
             }
