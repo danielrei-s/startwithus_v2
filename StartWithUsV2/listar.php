@@ -113,7 +113,7 @@ $result = mysqli_query($conn, $query);
                     <td><?php echo $registo["summaryDescription"];     ?></td>
                     <td><?php echo $registo["raiseObjective"]; ?></td>
                     <td><?php echo $registo["initialDate"]; ?></td>
-                    <td><?php echo $registo2["firstName"]; echo $registo2["lastName"];  ?></td>
+                    <td><?php echo $registo2["firstName"]; echo " ";  echo $registo2["lastName"];  ?></td>
                     <td><?php echo $registo["expertNeeds"] ?></td>
                     <td><a class="nav-link scrollto active" href="portfolio-details.php">Learn more</a></td>
                         <?php break; } ?>
@@ -164,21 +164,20 @@ $result = mysqli_query($conn, $query);
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Research projects</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Invest in projects</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Host your project</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Become a member of our team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#portfolio">Research projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.php">Invest in projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cta">Host your project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#contact">Become a member of our team</a></li>
             </ul>
           </div>
 

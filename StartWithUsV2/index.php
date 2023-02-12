@@ -102,7 +102,7 @@ if( empty( $_SESSION['id'] )){
       <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
-            <i class="ri-store-line"></i>
+            <i class="ri-store-2-line"></i>
             <h3><a href="#portfolio">Our Projects</a></h3>
           </div>
         </div>
@@ -114,7 +114,7 @@ if( empty( $_SESSION['id'] )){
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
-            <i class="ri-database-2-line"></i>
+            <i class="ri-group-line"></i>
             <h3><a href="<?= $member;?>.php">Became a member</a></h3>
           </div>
         </div>
@@ -791,23 +791,23 @@ if( empty( $_SESSION['id'] )){
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Research projects</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Invest in projects</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Host your project</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Become a member of our team</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#portfolio">Research projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.php">Invest in projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cta">Host your project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#contact">Become a member of our team</a></li>
             </ul>
           </div>
+          
         </div>
       </div>
     </div>

@@ -480,10 +480,9 @@ background: lightblue;
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
             </ul>
           </div>
@@ -491,11 +490,10 @@ background: lightblue;
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#portfolio">Research projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.php">Invest in projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cta">Host your project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#contact">Become a member of our team</a></li>
             </ul>
           </div>
 

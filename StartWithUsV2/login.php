@@ -165,11 +165,20 @@ if(isset($_POST["login"])){
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">HOME</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">ABOUT US</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICES</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">TERMS OF SERVICE</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">PRIVACY POLICY</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#portfolio">Research projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.php">Invest in projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cta">Host your project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#contact">Become a member of our team</a></li>
             </ul>
           </div>
         </div>

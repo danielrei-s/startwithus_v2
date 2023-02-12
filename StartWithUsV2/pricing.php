@@ -98,7 +98,9 @@ ini_set('default_charset', 'ISO8859-1');
 <section id="pricing" class="section-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
+          <br><br>
           <h2>Plant the seeds of your success with <span>us</span> and watch them blossom into realities.</h2>
+          <br><br><br>
           <span class="section-divider"></span>
         </div>
         <div class="row">
@@ -180,10 +182,9 @@ ini_set('default_charset', 'ISO8859-1');
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="politicadeinformacao.php">Privacy policy</a></li>
             </ul>
           </div>
@@ -191,11 +192,10 @@ ini_set('default_charset', 'ISO8859-1');
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#portfolio">Research projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="pricing.php">Invest in projects</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cta">Host your project</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#contact">Become a member of our team</a></li>
             </ul>
           </div>
 
