@@ -81,6 +81,9 @@ $result = mysqli_query($conn, $query);
         <main>
           <br>
           <br>
+          <br>
+          <br>
+          <br>
             <h1><strong>PROJECT LIST</strong></h1>
             <div class="d-flex justify-content-center">
             <div class="col-xl-11 col-xl-11">

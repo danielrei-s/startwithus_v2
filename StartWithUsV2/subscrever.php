@@ -108,7 +108,7 @@ function test_input($dados) {
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
           <li><a class="nav-link scrollto active" href="index.php#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto " href="index.php#portfolio">Projects</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
         </ul>

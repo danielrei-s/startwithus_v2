@@ -232,7 +232,7 @@ background: lightblue;
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
           <li><a class="nav-link scrollto" href="index.php#services">Services</a></li>
-          <li><a class="nav-link scrollto active " href="index.php#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto active " href="index.php#portfolio">Projects</a></li>
           <li><a class="nav-link scrollto" href="index.php#team">Team</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
           <?php
@@ -401,18 +401,18 @@ background: lightblue;
 	                                          <td align="center"  bgcolor="<?php echo $cor ?>"> 																			
 																								<a title="Contra-proposta" onClick="contraProposta(<?php echo "'".$user."'" ?>, <?php echo "'".$ano."'" ?>, <?php echo "'".$mes."'" ?>,<?php echo "'".$r_horas_1[19]."'" ?>)" >
                                                 <a href="contraProposta.php?id=<?php echo $arr_det[0]  ?>" rel="ajaxpanel" id="MySlideBar">
-																								<img align="middle" src="assets/img/question.png" width="20" border="0" alt="Excluir do Mapa mensal" title="Excluir do Mapa mensal"/>
+																								<img align="middle" src="assets/img/question.png" width="20" border="0" alt="Counter-Proposal" title="Counter-Proposal"/>
 																								</a>
 																							</td>	
                                               <td align="center"  bgcolor="<?php echo $cor ?>">
                                                 <a title="Aprova" onClick="aprovaProposta(<?php echo "'".$user."'" ?>, <?php echo "'".$ano."'" ?>, <?php echo "'".$mes."'" ?>,<?php echo "'".$r_horas_1[19]."'" ?>)" >
-																									<img align="middle" src="assets/img/approve.png" width="20" border="0" alt="Alterar" title="Alterar"/>
+																									<img align="middle" src="assets/img/approve.png" width="20" border="0" alt="Accept" title="Accept"/>
 																								</a>			
 																							</td>
     	
                                               <td align="center"  bgcolor="<?php echo $cor ?>"> 																			
 																								<a title="Rejeitar" onClick="declina(<?php echo "'".$user."'" ?>, <?php echo "'".$ano."'" ?>, <?php echo "'".$mes."'" ?>,<?php echo "'".$r_horas_1[19]."'" ?>)" >
-																								<img align="middle" src="assets/img/reject.png" width="20" border="0" alt="Excluir do Mapa mensal" title="Excluir do Mapa mensal"/>
+																								<img align="middle" src="assets/img/reject.png" width="20" border="0" alt="Decline" title="Decline"/>
 																								</a>
 																							</td>
                                               
