@@ -255,7 +255,8 @@ background: lightblue;
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+      <!-- <a href="#about" class="get-started-btn scrollto">Get Started</a> -->
+      <a href="close_session.php" class="get-started-btn scrollto">LOGOUT</a>
 
     </div>
   </header><!-- End Header -->
@@ -286,7 +287,7 @@ background: lightblue;
 								      	<tr>
 										    <td >
 													<?php 
-                          $idUser = '4';
+                          // $idUser = '4';
 														$arrayUnique =  mysqli_query($conn, "SELECT Distinct idProject, idAction FROM messages WHERE (idSender = $idUser or idReceiver = $idUser)");
 														while ($arrUnique = mysqli_fetch_array($arrayUnique)) 
 														 {
